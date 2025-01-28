@@ -42,7 +42,7 @@ public class SeatReservation {
    public void makeFlyingWithInfant(){
       this.flyingWithInfant = true;
    }
-   public void makeNOtFlyingWithInfant() {
+   public void makeNotFlyingWithInfant() {
       this.flyingWithInfant = false;
    }
 
