@@ -104,7 +104,7 @@ public class SeatReservationApplication extends Application {
         root.setCenter(gridPane);
         root.setBottom(buttonsBox);
 
-        Scene scene = new Scene(root, 400, 300);
+        Scene scene = new Scene(root, 500, 300);
         stage.setTitle("Seat Reservation");
         stage.setScene(scene);
 

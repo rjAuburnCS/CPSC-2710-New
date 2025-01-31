@@ -1,3 +1,5 @@
+package edu.au.cpsc.module2;
+
 public class SeatReservation {
 
    private String flightDesignator;
@@ -6,6 +8,7 @@ public class SeatReservation {
    private String lastName;
    private int numberOfBags;
    private boolean flyingWithInfant;
+
 
 
 
@@ -42,7 +45,7 @@ public class SeatReservation {
    public void makeFlyingWithInfant(){
       this.flyingWithInfant = true;
    }
-   public void makeNOtFlyingWithInfant() {
+   public void makeNotFlyingWithInfant() {
       this.flyingWithInfant = false;
    }
 
