@@ -135,14 +135,14 @@ public class Airport {
              BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
 
             String line;
-            // Skip header line
+            
             reader.readLine();
 
             while ((line = reader.readLine()) != null) {
-                String[] values = line.split(",", -1); // -1 to include empty values
+                String[] values = line.split(",", -1); 
                 Airport airport = new Airport();
 
-                // Set the values for airport object from the CSV line
+                
                 airport.setIdent(values[0]);
                 airport.setType(values[1]);
                 airport.setName(values[2]);
@@ -155,7 +155,7 @@ public class Airport {
                 airport.setIataCode(values[9]);
                 airport.setLocalCode(values[10]);
 
-                // Handle parsing for Double values with empty check
+                
                 airport.setLongitude(values[11].isEmpty() ? null : Double.parseDouble(values[11]));
                 airport.setLatitude(values[12].isEmpty() ? null : Double.parseDouble(values[12]));
 
@@ -163,7 +163,7 @@ public class Airport {
             }
         } catch (IOException | NumberFormatException e) {
             e.printStackTrace();
-            // Consider logging or rethrowing the exception as needed
+            
         }
 
         return airports;
