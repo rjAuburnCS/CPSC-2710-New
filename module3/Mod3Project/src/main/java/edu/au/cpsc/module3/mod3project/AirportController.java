@@ -45,10 +45,10 @@ public class AirportController {
             airports = Airport.readAll();
         } catch (IOException e) {
             e.printStackTrace();
-            // Handle the error, maybe show a message to the user
+            
         }
 
-        // Add event handlers
+        
         identField.setOnAction(event -> searchAirport());
         iataCodeField.setOnAction(event -> searchAirport());
         localCodeField.setOnAction(event -> searchAirport());
@@ -60,7 +60,7 @@ public class AirportController {
         String iataCode = iataCodeField.getText().trim();
         String localCode = localCodeField.getText().trim();
 
-        // Search logic to find the corresponding airport based on the input fields
+        
         Airport airport = null;
         for (Airport a : airports) {
             if (!ident.isEmpty() && ident.equals(a.getIdent())) {
@@ -75,7 +75,7 @@ public class AirportController {
             }
         }
 
-        // Fill in the fields if the airport is found
+     
         if (airport != null) {
             typeField.setText(airport.getType());
             nameField.setText(airport.getName());
@@ -84,7 +84,7 @@ public class AirportController {
             regionField.setText(airport.getIsoRegion());
             municipalityField.setText(airport.getMunicipality());
 
-            // Update map display (to be implemented)
+           
             updateMap(airport);
         }
     }
@@ -93,7 +93,7 @@ public class AirportController {
         WebEngine webEngine = webView.getEngine();
         double latitude = airport.getLatitude();
         double longitude = airport.getLongitude();
-        int zoomLevel = 12; // Adjust as needed
+        int zoomLevel = 12; 
         String url = "https://www.windy.com/?" + latitude + "," + longitude + "," + zoomLevel;
         webEngine.load(url);
     }
