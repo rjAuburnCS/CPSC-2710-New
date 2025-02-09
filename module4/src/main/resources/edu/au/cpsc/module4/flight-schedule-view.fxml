@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module4.controller.FlightScheduleController">
+    <!-- Top: Title -->
+    <top>
+        <HBox alignment="CENTER">
+            <Label text="Flight Schedule Application" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <!-- Center: Table View -->
+    <center>
+        <TableView fx:id="flightTableView">
+            <columns>
+                <TableColumn fx:id="flightDesignatorColumn" text="Flight Designator" />
+                <TableColumn fx:id="departureAirportColumn" text="Departure Airport" />
+                <TableColumn fx:id="arrivalAirportColumn" text="Arrival Airport" />
+                <TableColumn fx:id="daysOfWeekColumn" text="Days of Week" />
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- Bottom: Detail Editor -->
+    <bottom>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+            <children>
+                <Label text="Flight Designator:" />
+                <TextField fx:id="flightDesignatorField" GridPane.columnIndex="1" />
+
+                <Label text="Departure Airport:" GridPane.rowIndex="1" />
+                <TextField fx:id="departureAirportField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Arrival Airport:" GridPane.rowIndex="2" />
+                <TextField fx:id="arrivalAirportField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <!-- Toggle Buttons for Days of Week -->
+                <Label text="Days of Week:" GridPane.rowIndex="3" />
+                <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <ToggleButton fx:id="mondayButton" text="M" />
+                    <ToggleButton fx:id="tuesdayButton" text="T" />
+                    <ToggleButton fx:id="wednesdayButton" text="W" />
+                    <ToggleButton fx:id="thursdayButton" text="R" />
+                    <ToggleButton fx:id="fridayButton" text="F" />
+                    <ToggleButton fx:id="saturdayButton" text="S" />
+                    <ToggleButton fx:id="sundayButton" text="U" />
+                </HBox>
+            </children>
+        </GridPane>
+    </bottom>
+</BorderPane>
