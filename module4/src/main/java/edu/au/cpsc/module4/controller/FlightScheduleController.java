@@ -6,7 +6,7 @@ import edu.au.cpsc.module4.data.AirlineDatabaseIO;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
+import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.*;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -31,7 +31,13 @@ public class FlightScheduleController {
         flightDesignatorColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFlightDesignator()));
         departureAirportColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDepartureAirportIdent()));
         arrivalAirportColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getArrivalAirportIdent()));
-        daysOfWeekColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDaysOfWeekString()));
+        daysOfWeekColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDaysOfWeekShortForm()));
+
+        // Ensure the columns resize with the window
+        flightDesignatorColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
+        departureAirportColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
+        arrivalAirportColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
+        daysOfWeekColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
 
         database = loadDatabase();
         flightTableView.getItems().setAll(database.getScheduledFlights());
@@ -112,7 +118,7 @@ public class FlightScheduleController {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
-    }
-
-
+}

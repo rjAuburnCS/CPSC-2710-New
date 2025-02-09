@@ -5,6 +5,7 @@ import java.time.DayOfWeek;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ScheduledFlight {
 
@@ -79,6 +80,24 @@ public class ScheduledFlight {
 
     public String getDaysOfWeekString() {
         return daysOfWeek.stream().map(DayOfWeek::name).collect(Collectors.joining(", "));
+    }
+
+    public String getDaysOfWeekShortForm() {
+        return Stream.of(DayOfWeek.values())
+                .filter(daysOfWeek::contains)
+                .map(day -> {
+                    switch (day) {
+                        case MONDAY: return "M";
+                        case TUESDAY: return "T";
+                        case WEDNESDAY: return "W";
+                        case THURSDAY: return "R";
+                        case FRIDAY: return "F";
+                        case SATURDAY: return "S";
+                        case SUNDAY: return "U";
+                        default: return "";
+                    }
+                })
+                .collect(Collectors.joining(", "));
     }
 
     // Override equals and hashCode

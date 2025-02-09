@@ -13,6 +13,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.Priority?>
 
 <BorderPane xmlns="http://javafx.com/javafx/23.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module4.controller.FlightScheduleController">
     <!-- Top: Title -->
@@ -24,23 +25,22 @@
 
     <!-- Center: Table View -->
     <center>
-        <TableView fx:id="flightTableView">
-            <columns>
-                <TableColumn fx:id="flightDesignatorColumn" text="Flight Designator" />
-                <TableColumn fx:id="departureAirportColumn" text="Departure Airport" />
-                <TableColumn fx:id="arrivalAirportColumn" text="Arrival Airport" />
-                <TableColumn fx:id="daysOfWeekColumn" text="Days of Week" />
-            </columns>
-        </TableView>
+        <VBox>
+            <TableView fx:id="flightTableView" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="flightDesignatorColumn" text="Flight Designator" prefWidth="150" />
+                    <TableColumn fx:id="departureAirportColumn" text="Departure Airport" prefWidth="150" />
+                    <TableColumn fx:id="arrivalAirportColumn" text="Arrival Airport" prefWidth="150" />
+                    <TableColumn fx:id="daysOfWeekColumn" text="Days of Week" prefWidth="150" />
+                </columns>
+            </TableView>
+        </VBox>
     </center>
 
     <!-- Bottom: Detail Editor and Action Buttons -->
     <bottom>
         <VBox spacing="10">
-            <GridPane hgap="10" vgap="10">
-                <padding>
-                    <Insets top="10" right="10" bottom="10" left="10"/>
-                </padding>
+            <GridPane hgap="10" vgap="10" style="-fx-padding: 10;">
                 <columnConstraints>
                     <ColumnConstraints hgrow="ALWAYS" />
                     <ColumnConstraints hgrow="ALWAYS" />
@@ -53,17 +53,17 @@
                 </rowConstraints>
                 <children>
                     <Label text="Flight Designator:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                    <TextField fx:id="flightDesignatorField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <TextField fx:id="flightDesignatorField" GridPane.columnIndex="1" GridPane.rowIndex="0" HBox.hgrow="ALWAYS" />
 
                     <Label text="Departure Airport:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <TextField fx:id="departureAirportField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <TextField fx:id="departureAirportField" GridPane.columnIndex="1" GridPane.rowIndex="1" HBox.hgrow="ALWAYS" />
 
                     <Label text="Arrival Airport:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                    <TextField fx:id="arrivalAirportField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <TextField fx:id="arrivalAirportField" GridPane.columnIndex="1" GridPane.rowIndex="2" HBox.hgrow="ALWAYS" />
 
                     <!-- Toggle Buttons for Days of Week -->
                     <Label text="Days of Week:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                    <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3" HBox.hgrow="ALWAYS">
                         <ToggleButton fx:id="mondayButton" text="Monday" />
                         <ToggleButton fx:id="tuesdayButton" text="Tuesday" />
                         <ToggleButton fx:id="wednesdayButton" text="Wednesday/HumpDay" />
@@ -76,10 +76,7 @@
             </GridPane>
 
             <!-- Action Buttons -->
-            <HBox spacing="10" alignment="CENTER">
-                <padding>
-                    <Insets top="10" right="10" bottom="10" left="10"/>
-                </padding>
+            <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
                 <Button text="Add" onAction="#handleAddFlight" />
                 <Button text="Remove" onAction="#handleRemoveFlight" />
                 <Button text="Clear" onAction="#handleClearFields" />
@@ -87,3 +84,9 @@
         </VBox>
     </bottom>
 </BorderPane>
+
+
+
+
+
+
