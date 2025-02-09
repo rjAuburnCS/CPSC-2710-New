@@ -33,7 +33,7 @@ public class FlightScheduleController {
         arrivalAirportColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getArrivalAirportIdent()));
         daysOfWeekColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDaysOfWeekShortForm()));
 
-        // Ensure the columns resize with the window
+        
         flightDesignatorColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
         departureAirportColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
         arrivalAirportColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
