@@ -2,7 +2,6 @@ package edu.au.cpsc.module4.model;
 
 import java.time.LocalTime;
 import java.time.DayOfWeek;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -80,5 +79,24 @@ public class ScheduledFlight {
 
     public String getDaysOfWeekString() {
         return daysOfWeek.stream().map(DayOfWeek::name).collect(Collectors.joining(", "));
+    }
+
+    // Override equals and hashCode
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ScheduledFlight that = (ScheduledFlight) o;
+        return Objects.equals(flightDesignator, that.flightDesignator) &&
+                Objects.equals(departureAirportIdent, that.departureAirportIdent) &&
+                Objects.equals(departureTime, that.departureTime) &&
+                Objects.equals(arrivalAirportIdent, that.arrivalAirportIdent) &&
+                Objects.equals(arrivalTime, that.arrivalTime) &&
+                Objects.equals(daysOfWeek, that.daysOfWeek);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(flightDesignator, departureAirportIdent, departureTime, arrivalAirportIdent, arrivalTime, daysOfWeek);
     }
 }
