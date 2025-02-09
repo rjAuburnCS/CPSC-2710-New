@@ -35,7 +35,7 @@
                 </columns>
             </TableView>
         </VBox>
-    </center>
+    </center> 
 
     <!-- Bottom: Detail Editor and Action Buttons -->
     <bottom>
