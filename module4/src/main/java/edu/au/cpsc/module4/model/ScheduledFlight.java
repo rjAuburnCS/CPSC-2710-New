@@ -5,6 +5,7 @@ import java.time.DayOfWeek;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ScheduledFlight {
 
@@ -75,5 +76,9 @@ public class ScheduledFlight {
     public void setDaysOfWeek(Set<DayOfWeek> daysOfWeek) {
         if (daysOfWeek == null) throw new IllegalArgumentException("Day needs a value");
         this.daysOfWeek = daysOfWeek;
+    }
+
+    public String getDaysOfWeekString() {
+        return daysOfWeek.stream().map(DayOfWeek::name).collect(Collectors.joining(", "));
     }
 }

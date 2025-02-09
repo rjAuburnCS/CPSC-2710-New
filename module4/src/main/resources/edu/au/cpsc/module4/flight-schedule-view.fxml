@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -33,43 +34,55 @@
         </TableView>
     </center>
 
-    <!-- Bottom: Detail Editor -->
+    <!-- Bottom: Detail Editor and Action Buttons -->
     <bottom>
-        <GridPane hgap="10" vgap="10">
-            <padding>
-                <Insets top="10" right="10" bottom="10" left="10"/>
-            </padding>
-            <columnConstraints>
-                <ColumnConstraints hgrow="ALWAYS" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints />
-                <RowConstraints />
-                <RowConstraints />
-                <RowConstraints />
-            </rowConstraints>
-            <children>
-                <Label text="Flight Designator:" />
-                <TextField fx:id="flightDesignatorField" GridPane.columnIndex="1" />
+        <VBox spacing="10">
+            <GridPane hgap="10" vgap="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
+                <children>
+                    <Label text="Flight Designator:" />
+                    <TextField fx:id="flightDesignatorField" GridPane.columnIndex="1" />
 
-                <Label text="Departure Airport:" GridPane.rowIndex="1" />
-                <TextField fx:id="departureAirportField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label text="Departure Airport:" GridPane.rowIndex="1" />
+                    <TextField fx:id="departureAirportField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                <Label text="Arrival Airport:" GridPane.rowIndex="2" />
-                <TextField fx:id="arrivalAirportField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label text="Arrival Airport:" GridPane.rowIndex="2" />
+                    <TextField fx:id="arrivalAirportField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-                <!-- Toggle Buttons for Days of Week -->
-                <Label text="Days of Week:" GridPane.rowIndex="3" />
-                <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                    <ToggleButton fx:id="mondayButton" text="M" />
-                    <ToggleButton fx:id="tuesdayButton" text="T" />
-                    <ToggleButton fx:id="wednesdayButton" text="W" />
-                    <ToggleButton fx:id="thursdayButton" text="R" />
-                    <ToggleButton fx:id="fridayButton" text="F" />
-                    <ToggleButton fx:id="saturdayButton" text="S" />
-                    <ToggleButton fx:id="sundayButton" text="U" />
-                </HBox>
-            </children>
-        </GridPane>
+                    <!-- Toggle Buttons for Days of Week -->
+                    <Label text="Days of Week:" GridPane.rowIndex="3" />
+                    <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <ToggleButton fx:id="mondayButton" text="M" />
+                        <ToggleButton fx:id="tuesdayButton" text="T" />
+                        <ToggleButton fx:id="wednesdayButton" text="W" />
+                        <ToggleButton fx:id="thursdayButton" text="R" />
+                        <ToggleButton fx:id="fridayButton" text="F" />
+                        <ToggleButton fx:id="saturdayButton" text="S" />
+                        <ToggleButton fx:id="sundayButton" text="U" />
+                    </HBox>
+                </children>
+            </GridPane>
+
+            <!-- Action Buttons -->
+            <HBox spacing="10" alignment="CENTER">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Button text="Add" onAction="#handleAddFlight" />
+                <Button text="Remove" onAction="#handleRemoveFlight" />
+                <Button text="Clear" onAction="#handleClearFields" />
+            </HBox>
+        </VBox>
     </bottom>
 </BorderPane>
