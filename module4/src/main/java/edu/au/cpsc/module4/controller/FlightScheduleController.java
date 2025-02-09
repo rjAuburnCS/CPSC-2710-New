@@ -6,7 +6,7 @@ import edu.au.cpsc.module4.data.AirlineDatabaseIO;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.io.*;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
