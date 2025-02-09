@@ -43,33 +43,34 @@
                 </padding>
                 <columnConstraints>
                     <ColumnConstraints hgrow="ALWAYS" />
+                    <ColumnConstraints hgrow="ALWAYS" />
                 </columnConstraints>
                 <rowConstraints>
-                    <RowConstraints />
-                    <RowConstraints />
-                    <RowConstraints />
-                    <RowConstraints />
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
                 </rowConstraints>
                 <children>
-                    <Label text="Flight Designator:" />
-                    <TextField fx:id="flightDesignatorField" GridPane.columnIndex="1" />
+                    <Label text="Flight Designator:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="flightDesignatorField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-                    <Label text="Departure Airport:" GridPane.rowIndex="1" />
+                    <Label text="Departure Airport:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                     <TextField fx:id="departureAirportField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                    <Label text="Arrival Airport:" GridPane.rowIndex="2" />
+                    <Label text="Arrival Airport:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                     <TextField fx:id="arrivalAirportField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
                     <!-- Toggle Buttons for Days of Week -->
-                    <Label text="Days of Week:" GridPane.rowIndex="3" />
+                    <Label text="Days of Week:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                     <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                        <ToggleButton fx:id="mondayButton" text="M" />
-                        <ToggleButton fx:id="tuesdayButton" text="T" />
-                        <ToggleButton fx:id="wednesdayButton" text="W" />
-                        <ToggleButton fx:id="thursdayButton" text="R" />
-                        <ToggleButton fx:id="fridayButton" text="F" />
-                        <ToggleButton fx:id="saturdayButton" text="S" />
-                        <ToggleButton fx:id="sundayButton" text="U" />
+                        <ToggleButton fx:id="mondayButton" text="Monday" />
+                        <ToggleButton fx:id="tuesdayButton" text="Tuesday" />
+                        <ToggleButton fx:id="wednesdayButton" text="Wednesday/HumpDay" />
+                        <ToggleButton fx:id="thursdayButton" text="Thursday" />
+                        <ToggleButton fx:id="fridayButton" text="Friday" />
+                        <ToggleButton fx:id="saturdayButton" text="Saturday" />
+                        <ToggleButton fx:id="sundayButton" text="Sunday" />
                     </HBox>
                 </children>
             </GridPane>
