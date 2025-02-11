@@ -100,7 +100,7 @@ public class ScheduledFlight {
                 .collect(Collectors.joining(", "));
     }
 
-    // Override equals and hashCode
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -33,7 +33,7 @@ public class FlightScheduleController {
         arrivalAirportColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getArrivalAirportIdent()));
         daysOfWeekColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDaysOfWeekShortForm()));
 
-        // Ensure the columns resize with the window
+
         flightDesignatorColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
         departureAirportColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
         arrivalAirportColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
@@ -94,8 +94,8 @@ public class FlightScheduleController {
         String flightDesignator = flightDesignatorField.getText();
         String departureAirportIdent = departureAirportField.getText();
         String arrivalAirportIdent = arrivalAirportField.getText();
-        LocalTime departureTime = LocalTime.of(13, 30); // Placeholder for actual time input
-        LocalTime arrivalTime = LocalTime.of(15, 0); // Placeholder for actual time input
+        LocalTime departureTime = LocalTime.of(13, 30);
+        LocalTime arrivalTime = LocalTime.of(15, 0);
         Set<DayOfWeek> daysOfWeek = new HashSet<>();
 
         if (mondayButton.isSelected()) daysOfWeek.add(DayOfWeek.MONDAY);

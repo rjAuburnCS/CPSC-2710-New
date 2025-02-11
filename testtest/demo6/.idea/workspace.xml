@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fd3a3415-7589-49a3-822b-caf4250a6fb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo6/airport-codes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Gluon-MultiViewProjectwithFXML/Gluon-MultiViewProjectwithFXML.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module3/Mod3Project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module3/Mod3Project/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module3/Mod3Project/src/main/java/edu/au/cpsc/module3/mod3project/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module3/Mod3Project/src/main/java/edu/au/cpsc/module3/mod3project/module-info.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2sdOMIynNR15sOD3ATU6iY32V5Q" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AirportApplication.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "branch3",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.4452622",
+    "settings.editor.selected.configurable": "configurable.group.language"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/demo6" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AirportApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.demo6.AirportApplication" />
+      <module name="demo6" />
+      <option name="VM_PARAMETERS" value="-Dprism.order=sw -Dprism.verbose=true -Djava.library.path=/Library/Java/JavaVirtualMachines/javafx-sdk-23.0.2/lib " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd3a3415-7589-49a3-822b-caf4250a6fb9" name="Changes" comment="" />
+      <created>1738781936180</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738781936180</updated>
+    </task>
+    <servers />
+  </component>
+</project>
