@@ -11,7 +11,7 @@ public class Part1Application extends Application {
 
   @Override
   public void start(Stage stage) throws IOException {
-    FXMLLoader fxmlLoader = new FXMLLoader(Part1Application.class.getResource("/edu/au/cpsc/miscstyle/part1.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(Part1Application.class.getResource("part1.fxml"));
     Scene scene = new Scene(fxmlLoader.load());
     stage.setTitle("Part 1");
     stage.setScene(scene);
@@ -22,3 +22,4 @@ public class Part1Application extends Application {
     launch();
   }
 }
+

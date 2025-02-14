@@ -23,7 +23,7 @@ VBox Group > Rectangle {
     -fx-stroke-width: 5px;
     -fx-stroke: rgb(70, 155, 75);
     -fx-stroke-type: inside;
-    -fx-fill: transparent; 
+    -fx-fill: transparent;
 }
 
 .hyperlink {
