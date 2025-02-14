@@ -13,7 +13,7 @@
 
 #airports-btn, #seat-reservation-btn, #flight-schedule-btn, #aircraft-btn {
     -fx-font-family: 'Anton SC';
-    -fx-font-size: 34px;
+    -fx-font-size: 40px;
     -fx-opacity: 0.8;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
@@ -22,7 +22,7 @@
 }
 
 #airports-btn:hover, #seat-reservation-btn:hover, #flight-schedule-btn:hover, #aircraft-btn:hover {
-    -fx-font-size: 36px;
+    -fx-font-size: 44px;
 }
 
 #airports-btn {
@@ -41,13 +41,14 @@
     -fx-background-image: url("../icons/calendar-23684_640.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100% 100%;
+    -fx-text-fill: royalblue;
 }
 
 #aircraft-btn {
     -fx-background-image: url("../icons/shuttle-32322_1920.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100% 100%;
-    -fx-text-fill: #00FF00;
+    -fx-text-fill: red;
 }
 
 
