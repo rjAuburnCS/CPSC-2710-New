@@ -14,7 +14,7 @@ public class LauncherApplication extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("launcher-app.fxml")));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Launcher");
+        primaryStage.setTitle("Part 2");
         primaryStage.show();
     }
 

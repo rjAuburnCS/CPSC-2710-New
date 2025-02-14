@@ -3,65 +3,51 @@
     src: url('../fonts/Silkscreen-Bold.ttf');
 }
 
-
-
-.background {
-    -fx-background-color: #dad7cd;
+#root {
+    -fx-background-color: lightblue;
 }
+
 
 #airports-btn, #seat-reservation-btn, #flight-schedule-btn, #aircraft-btn {
     -fx-font-family: 'Silkscreen';
-    -fx-font-size: 18px;
+    -fx-font-size: 23px;
+    -fx-opacity: 0.8; /* Adjust button opacity */
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-text-fill: black;
 }
 
 #airports-btn:hover, #seat-reservation-btn:hover, #flight-schedule-btn:hover, #aircraft-btn:hover {
-    -fx-font-size: 23px;
+    -fx-font-size: 26px;
 }
 
 #airports-btn {
-
-    -fx-background-position: center;
-    -fx-background-size: 100%100%;
     -fx-background-image: url("../icons/space-7549271_1920.png");
-     -fx-text-fill: orange
-     ;
+    -fx-background-size: 100% 100%;
+
+    -fx-text-fill: limegreen;
 }
-
-
-
-
 
 #seat-reservation-btn {
-
-
-
-    -fx-background-position: center;
-    -fx-background-size: 100%100%;
     -fx-background-image: url("../icons/toilet-304792_1920.png");
-
-    -fx-text-fill: black;
+    -fx-background-size: 100% 100%;
 }
-
 
 #flight-schedule-btn {
-
-
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-    -fx-background-size: 100%100%;
     -fx-background-image: url("../icons/calendar-23684_640.png");
-    -fx-text-fill: black;
-
-
-    }
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+}
 
 #aircraft-btn {
-  -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-    -fx-background-size: 100%100%;
-    -fx-background-image: url("../icons/airplane-43975_1920.png");
-      -fx-text-fill: orange;
+    -fx-background-image: url("../icons/shuttle-32322_1920.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-text-fill: limegreen;
 }
+
+
 
 
 
