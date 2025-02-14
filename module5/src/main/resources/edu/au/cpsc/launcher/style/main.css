@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Silkscreen';
+    src: url('../fonts/Silkscreen-Regular.ttf');
+}
+
+.background {
+    -fx-background-color: #dad7cd;
+}
+
+#airports-btn, #seat-reservation-btn, #flight-schedule-btn, #aircraft-btn {
+    -fx-font-family: 'Silkscreen';
+    -fx-font-size: 20px;
+
+
+}
+
+#airports-btn:hover, #seat-reservation-btn:hover, #flight-schedule-btn:hover, #aircraft-btn:hover {
+    -fx-font-size: 14px; /* Smaller font size on hover */
+}
