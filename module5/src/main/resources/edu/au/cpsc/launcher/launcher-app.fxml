@@ -16,10 +16,10 @@
         <RowConstraints minHeight="10.0" percentHeight="50.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <Button id="airports-btn" maxHeight="Infinity" maxWidth="Infinity" text="Airports" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-        <Button id="seat-reservation-btn" maxHeight="Infinity" maxWidth="Infinity" text="Seat Reservations" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-        <Button id="flight-schedule-btn" maxHeight="Infinity" maxWidth="Infinity" text="Flight Schedule" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <Button id="aircraft-btn" maxHeight="Infinity" maxWidth="Infinity" text="Aircraft" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button id="airports-btn" maxHeight="Infinity" maxWidth="Infinity" text="Airports" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Button id="seat-reservation-btn" maxHeight="Infinity" maxWidth="Infinity" text="Seat Reservations" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button id="flight-schedule-btn" maxHeight="Infinity" maxWidth="Infinity" text="Flight Schedule" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Button id="aircraft-btn" maxHeight="Infinity" maxWidth="Infinity" text="Aircraft" GridPane.columnIndex="1" GridPane.rowIndex="1" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

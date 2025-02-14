@@ -1,16 +1,19 @@
 @font-face {
-    font-family: 'Silkscreen';
-    src: url('../fonts/Silkscreen-Bold.ttf');
+    font-family: 'Anton SC';
+    src: url('../fonts/AntonSC-Regular.ttf');
 }
 
 #root {
     -fx-background-color: lightblue;
+    -fx-background-image: url("../icons/astronaut-8116275_1920.png");
+    -fx-background-size: cover;
+    fx-background-size: 100% 100%;
+    -fx-background-opacity: 0.3;
 }
 
-
 #airports-btn, #seat-reservation-btn, #flight-schedule-btn, #aircraft-btn {
-    -fx-font-family: 'Silkscreen';
-    -fx-font-size: 23px;
+    -fx-font-family: 'Anton SC';
+    -fx-font-size: 34px;
     -fx-opacity: 0.8;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
@@ -19,14 +22,14 @@
 }
 
 #airports-btn:hover, #seat-reservation-btn:hover, #flight-schedule-btn:hover, #aircraft-btn:hover {
-    -fx-font-size: 26px;
+    -fx-font-size: 36px;
 }
 
 #airports-btn {
     -fx-background-image: url("../icons/space-7549271_1920.png");
     -fx-background-size: 100% 100%;
 
-    -fx-text-fill: limegreen;
+    -fx-text-fill: hotpink;
 }
 
 #seat-reservation-btn {
@@ -44,7 +47,7 @@
     -fx-background-image: url("../icons/shuttle-32322_1920.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100% 100%;
-    -fx-text-fill: limegreen;
+    -fx-text-fill: #00FF00;
 }
 
 
