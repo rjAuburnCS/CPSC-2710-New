@@ -15,5 +15,5 @@
 }
 
 #airports-btn:hover, #seat-reservation-btn:hover, #flight-schedule-btn:hover, #aircraft-btn:hover {
-    -fx-font-size: 14px; /* Smaller font size on hover */
+    -fx-font-size: 14px; 
 }
