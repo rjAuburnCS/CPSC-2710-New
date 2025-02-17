@@ -1,5 +1,6 @@
 package edu.au.cpsc.module4;
 
+import edu.au.cpsc.module4.controller.FlightScheduleController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,6 +15,12 @@ public class FlightScheduleApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Flight Schedule Application");
         stage.setScene(scene);
+
+        stage.setOnCloseRequest(event -> {
+            FlightScheduleController controller = fxmlLoader.getController();
+            controller.saveDatabase();
+        });
+
         stage.show();
     }
 
@@ -21,3 +28,4 @@ public class FlightScheduleApplication extends Application {
         launch();
     }
 }
+
