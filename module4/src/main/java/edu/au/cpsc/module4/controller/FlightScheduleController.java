@@ -1,8 +1,8 @@
 package edu.au.cpsc.module4.controller;
 
-import edu.au.cpsc.module4.model.ScheduledFlight;
 import edu.au.cpsc.module4.data.AirlineDatabase;
 import edu.au.cpsc.module4.data.AirlineDatabaseIO;
+import edu.au.cpsc.module4.model.ScheduledFlight;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -33,12 +33,6 @@ public class FlightScheduleController {
         arrivalAirportColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getArrivalAirportIdent()));
         daysOfWeekColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDaysOfWeekShortForm()));
 
-
-        flightDesignatorColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
-        departureAirportColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
-        arrivalAirportColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
-        daysOfWeekColumn.prefWidthProperty().bind(flightTableView.widthProperty().multiply(0.25));
-
         database = loadDatabase();
         flightTableView.getItems().setAll(database.getScheduledFlights());
     }
@@ -51,7 +45,7 @@ public class FlightScheduleController {
         }
     }
 
-    private void saveDatabase() {
+    public void saveDatabase() {
         try (OutputStream os = new FileOutputStream("flights.dat")) {
             AirlineDatabaseIO.save(database, os);
         } catch (IOException e) {
@@ -91,11 +85,11 @@ public class FlightScheduleController {
     }
 
     private ScheduledFlight createScheduledFlightFromFields() {
-        String flightDesignator = flightDesignatorField.getText();
-        String departureAirportIdent = departureAirportField.getText();
-        String arrivalAirportIdent = arrivalAirportField.getText();
-        LocalTime departureTime = LocalTime.of(13, 30);
-        LocalTime arrivalTime = LocalTime.of(15, 0);
+        String flightDesignator = flightDesignatorField.getText().trim();
+        String departureAirportIdent = departureAirportField.getText().trim();
+        String arrivalAirportIdent = arrivalAirportField.getText().trim();
+        LocalTime departureTime = LocalTime.of(13, 30); // Example, replace with actual input
+        LocalTime arrivalTime = LocalTime.of(15, 0); // Example, replace with actual input
         Set<DayOfWeek> daysOfWeek = new HashSet<>();
 
         if (mondayButton.isSelected()) daysOfWeek.add(DayOfWeek.MONDAY);

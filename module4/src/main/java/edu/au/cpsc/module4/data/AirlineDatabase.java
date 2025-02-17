@@ -8,36 +8,23 @@ import java.util.List;
 
 public class AirlineDatabase implements Serializable {
 
-private List<ScheduledFlight> ScheduledFlights;
+    private List<ScheduledFlight> ScheduledFlights;
 
-public AirlineDatabase(){
+    public AirlineDatabase() {
+        ScheduledFlights = new ArrayList<>();
+    }
 
-ScheduledFlights = new ArrayList<>();
+    public List<ScheduledFlight> getScheduledFlights() {
+        return ScheduledFlights;
+    }
 
-}
+    public void addScheduledFlight(ScheduledFlight sf) {
+        if (sf == null) throw new IllegalArgumentException("Scheduled Flight can't be null");
+        ScheduledFlights.add(sf);
+    }
 
-public List<ScheduledFlight> getScheduledFlights() {
-
-return ScheduledFlights;
-
-}
-
-public void addScheduledFlight(ScheduledFlight sf) {
-
-if (sf == null) throw new IllegalArgumentException("Scheduled Flight cant be null");
-ScheduledFlights.add(sf);
-}
-public void removeScheduledFlight(ScheduledFlight sf) {
-
-if (sf == null) throw new IllegalArgumentException("Scheduled Flight cant be null");
-ScheduledFlights.remove(sf);
-}
-public void updateScheduledFlight(ScheduledFlight sf) {
-
-if (sf == null) throw new IllegalArgumentException("Scheduled Flight cant be null");
-removeScheduledFlight(sf);
-addScheduledFlight(sf);
-}
-
-
+    public void removeScheduledFlight(ScheduledFlight sf) {
+        if (sf == null) throw new IllegalArgumentException("Scheduled Flight can't be null");
+        ScheduledFlights.remove(sf);
+    }
 }
