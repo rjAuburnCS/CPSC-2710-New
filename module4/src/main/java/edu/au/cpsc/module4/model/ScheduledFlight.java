@@ -67,7 +67,7 @@ public class ScheduledFlight implements Serializable {
     }
 
     public void setArrivalTime(LocalTime arrivalTime) {
-        if (arrivalTime == null) throw new IllegalArgumentException("Flight Designator needs a value");
+        if (arrivalTime == null) throw new IllegalArgumentException("Arrival time needs a value");
         this.arrivalTime = arrivalTime;
     }
 
@@ -76,7 +76,7 @@ public class ScheduledFlight implements Serializable {
     }
 
     public void setDaysOfWeek(Set<DayOfWeek> daysOfWeek) {
-        if (daysOfWeek == null) throw new IllegalArgumentException("Day needs a value");
+        if (daysOfWeek == null) throw new IllegalArgumentException("Days of the week need a value");
         this.daysOfWeek = daysOfWeek;
     }
 
