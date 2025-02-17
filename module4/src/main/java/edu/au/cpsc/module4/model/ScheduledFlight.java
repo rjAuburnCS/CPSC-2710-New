@@ -1,13 +1,14 @@
 package edu.au.cpsc.module4.model;
 
-import java.time.LocalTime;
+import java.io.Serializable;
 import java.time.DayOfWeek;
+import java.time.LocalTime;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ScheduledFlight {
+public class ScheduledFlight implements Serializable {
 
     private String flightDesignator;
     private String departureAirportIdent;
@@ -24,6 +25,7 @@ public class ScheduledFlight {
         setArrivalTime(arrivalTime);
         setDaysOfWeek(daysOfWeek);
     }
+
     public String getFlightDesignator() {
         return flightDesignator;
     }
@@ -65,7 +67,7 @@ public class ScheduledFlight {
     }
 
     public void setArrivalTime(LocalTime arrivalTime) {
-        if (arrivalTime == null) throw new IllegalArgumentException("Flight Designator needs a value");
+        if (arrivalTime == null) throw new IllegalArgumentException("Arrival time needs a value");
         this.arrivalTime = arrivalTime;
     }
 
@@ -74,7 +76,7 @@ public class ScheduledFlight {
     }
 
     public void setDaysOfWeek(Set<DayOfWeek> daysOfWeek) {
-        if (daysOfWeek == null) throw new IllegalArgumentException("Day needs a value");
+        if (daysOfWeek == null) throw new IllegalArgumentException("Days of the week need a value");
         this.daysOfWeek = daysOfWeek;
     }
 
@@ -100,7 +102,6 @@ public class ScheduledFlight {
                 .collect(Collectors.joining(", "));
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -119,3 +120,4 @@ public class ScheduledFlight {
         return Objects.hash(flightDesignator, departureAirportIdent, departureTime, arrivalAirportIdent, arrivalTime, daysOfWeek);
     }
 }
+
