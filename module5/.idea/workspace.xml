@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f93a4620-7f13-48a4-852d-fb95839c651f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/src/main/java/edu/au/cpsc/module6/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/src/main/java/edu/au/cpsc/module6/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module6/src/main/resources/edu/au/cpsc/module6/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +67,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/edu/au/cpsc/miscstyle/style" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LauncherApplication">
+  <component name="RunManager" selected="Application.Part1Application">
     <configuration name="LauncherApplication" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
