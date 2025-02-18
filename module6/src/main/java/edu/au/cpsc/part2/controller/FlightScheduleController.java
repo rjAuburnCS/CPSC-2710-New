@@ -47,9 +47,9 @@ public class FlightScheduleController {
         model = new FlightScheduleModel();
         bindFieldsToModel();
 
-        setupDaysOfWeekListeners(); // Setup listeners for day buttons
+        setupDaysOfWeekListeners();
 
-        // Enable/disable buttons based on validation and state of the model
+
         addButton.disableProperty().bind(
                 Bindings.or(
                         Bindings.or(
@@ -60,7 +60,7 @@ public class FlightScheduleController {
                                 )
                         ),
                         Bindings.or(
-                                isValidDaysOfWeek.not(), // Include validation for days of the week
+                                isValidDaysOfWeek.not(),
                                 Bindings.and(
                                         model.isNewProperty().not(),
                                         model.isModifiedProperty().not()
@@ -70,7 +70,7 @@ public class FlightScheduleController {
         );
 
         removeButton.disableProperty().bind(
-                Bindings.isEmpty(flightTableView.getSelectionModel().getSelectedItems()) // Enable remove button only when a flight is selected
+                Bindings.isEmpty(flightTableView.getSelectionModel().getSelectedItems())
         );
     }
 
@@ -91,7 +91,7 @@ public class FlightScheduleController {
     }
 
     @FXML private void handleAddFlight() {
-        System.out.println("Add button clicked"); // Debug print
+        System.out.println("Add button clicked");
 
         ScheduledFlight flight = createScheduledFlightFromFields();
         if (flight != null) {
@@ -102,7 +102,7 @@ public class FlightScheduleController {
     }
 
     @FXML private void handleRemoveFlight() {
-        System.out.println("Remove button clicked"); // Debug print
+        System.out.println("Remove button clicked");
 
         ScheduledFlight selectedFlight = flightTableView.getSelectionModel().getSelectedItem();
         if (selectedFlight != null) {
@@ -113,7 +113,7 @@ public class FlightScheduleController {
     }
 
     @FXML private void handleClearFields() {
-        System.out.println("Clear button clicked"); // Debug print
+        System.out.println("Clear button clicked");
 
         flightDesignatorField.clear();
         departureAirportField.clear();
@@ -126,7 +126,7 @@ public class FlightScheduleController {
         saturdayButton.setSelected(false);
         sundayButton.setSelected(false);
 
-        // Ensure the fields are set back to red when cleared
+
         flightDesignatorField.setStyle("-fx-border-color: red;");
         departureAirportField.setStyle("-fx-border-color: red;");
         arrivalAirportField.setStyle("-fx-border-color: red;");
@@ -136,8 +136,8 @@ public class FlightScheduleController {
         String flightDesignator = flightDesignatorField.getText().trim();
         String departureAirportIdent = departureAirportField.getText().trim();
         String arrivalAirportIdent = arrivalAirportField.getText().trim();
-        LocalTime departureTime = LocalTime.of(13, 30); // Example, replace with actual input
-        LocalTime arrivalTime = LocalTime.of(15, 0); // Example, replace with actual input
+        LocalTime departureTime = LocalTime.of(0, 0);
+        LocalTime arrivalTime = LocalTime.of(0, 0);
         Set<DayOfWeek> daysOfWeek = new HashSet<>();
 
         if (mondayButton.isSelected()) daysOfWeek.add(DayOfWeek.MONDAY);
@@ -169,7 +169,7 @@ public class FlightScheduleController {
         departureAirportField.textProperty().bindBidirectional(model.departureAirportProperty());
         arrivalAirportField.textProperty().bindBidirectional(model.arrivalAirportProperty());
 
-        // Set initial red borders
+
         flightDesignatorField.setStyle("-fx-border-color: red;");
         departureAirportField.setStyle("-fx-border-color: red;");
         arrivalAirportField.setStyle("-fx-border-color: red;");
@@ -212,7 +212,7 @@ public class FlightScheduleController {
             }
         }
         isValidDaysOfWeek.set(anySelected);
-        System.out.println("Days of Week Valid: " + anySelected); // Debug print
+        System.out.println("Days of Week Valid: " + anySelected);
     }
 }
 

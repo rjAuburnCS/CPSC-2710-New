@@ -10,9 +10,9 @@ public class FlightScheduleModel {
     private final BooleanProperty isNew = new SimpleBooleanProperty(true);
     private final BooleanProperty isModified = new SimpleBooleanProperty(false);
 
-    private final BooleanProperty isValidFlightDesignator = new SimpleBooleanProperty(false); // Default to false
-    private final BooleanProperty isValidDepartureAirport = new SimpleBooleanProperty(false); // Default to false
-    private final BooleanProperty isValidArrivalAirport = new SimpleBooleanProperty(false); // Default to false
+    private final BooleanProperty isValidFlightDesignator = new SimpleBooleanProperty(false);
+    private final BooleanProperty isValidDepartureAirport = new SimpleBooleanProperty(false);
+    private final BooleanProperty isValidArrivalAirport = new SimpleBooleanProperty(false);
 
     public String getFlightDesignator() {
         return flightDesignator.get();
