@@ -77,13 +77,14 @@
 
             <!-- Action Buttons -->
             <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
-                <Button text="Add" onAction="#handleAddFlight" />
-                <Button text="Remove" onAction="#handleRemoveFlight" />
-                <Button text="Clear" onAction="#handleClearFields" />
+                <Button fx:id="addButton" text="Add" onAction="#handleAddFlight" />
+                <Button fx:id="removeButton" text="Remove" onAction="#handleRemoveFlight" />
+                <Button fx:id="clearButton" text="Clear" onAction="#handleClearFields" />
             </HBox>
         </VBox>
     </bottom>
 </BorderPane>
+
 
 
 

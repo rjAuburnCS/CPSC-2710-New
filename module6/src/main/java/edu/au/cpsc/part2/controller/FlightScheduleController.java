@@ -2,7 +2,9 @@ package edu.au.cpsc.part2.controller;
 
 import edu.au.cpsc.part2.data.AirlineDatabase;
 import edu.au.cpsc.part2.data.AirlineDatabaseIO;
+import edu.au.cpsc.part2.model.FlightScheduleModel;
 import edu.au.cpsc.part2.model.ScheduledFlight;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -24,8 +26,10 @@ public class FlightScheduleController {
     @FXML private TextField departureAirportField;
     @FXML private TextField arrivalAirportField;
     @FXML private ToggleButton mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton, saturdayButton, sundayButton;
+    @FXML private Button addButton, removeButton, clearButton;
 
     private AirlineDatabase database;
+    private FlightScheduleModel model;
 
     public void initialize() {
         flightDesignatorColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFlightDesignator()));
@@ -35,6 +39,27 @@ public class FlightScheduleController {
 
         database = loadDatabase();
         flightTableView.getItems().setAll(database.getScheduledFlights());
+
+        model = new FlightScheduleModel();
+        bindFieldsToModel();
+
+        // Enable/disable buttons based on validation and state of the model
+        addButton.disableProperty().bind(
+                Bindings.or(
+                        Bindings.or(
+                                model.isValidFlightDesignatorProperty().not(),
+                                Bindings.or(
+                                        model.isValidDepartureAirportProperty().not(),
+                                        model.isValidArrivalAirportProperty().not()
+                                )
+                        ),
+                        Bindings.and(
+                                model.isNewProperty().not(),
+                                model.isModifiedProperty().not()
+                        )
+                )
+        );
+        removeButton.disableProperty().bind(model.isNewProperty());
     }
 
     private AirlineDatabase loadDatabase() {
@@ -54,6 +79,8 @@ public class FlightScheduleController {
     }
 
     @FXML private void handleAddFlight() {
+        System.out.println("Add button clicked"); // Debug print
+
         ScheduledFlight flight = createScheduledFlightFromFields();
         if (flight != null) {
             database.addScheduledFlight(flight);
@@ -63,6 +90,8 @@ public class FlightScheduleController {
     }
 
     @FXML private void handleRemoveFlight() {
+        System.out.println("Remove button clicked"); // Debug print
+
         ScheduledFlight selectedFlight = flightTableView.getSelectionModel().getSelectedItem();
         if (selectedFlight != null) {
             database.removeScheduledFlight(selectedFlight);
@@ -72,6 +101,8 @@ public class FlightScheduleController {
     }
 
     @FXML private void handleClearFields() {
+        System.out.println("Clear button clicked"); // Debug print
+
         flightDesignatorField.clear();
         departureAirportField.clear();
         arrivalAirportField.clear();
@@ -115,4 +146,32 @@ public class FlightScheduleController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
+    private void bindFieldsToModel() {
+        flightDesignatorField.textProperty().bindBidirectional(model.flightDesignatorProperty());
+        departureAirportField.textProperty().bindBidirectional(model.departureAirportProperty());
+        arrivalAirportField.textProperty().bindBidirectional(model.arrivalAirportProperty());
+
+        flightDesignatorField.textProperty().addListener((observable, oldValue, newValue) -> {
+            model.setValidFlightDesignator(!newValue.trim().isEmpty());
+        });
+        departureAirportField.textProperty().addListener((observable, oldValue, newValue) -> {
+            model.setValidDepartureAirport(!newValue.trim().isEmpty());
+        });
+        arrivalAirportField.textProperty().addListener((observable, oldValue, newValue) -> {
+            model.setValidArrivalAirport(!newValue.trim().isEmpty());
+        });
+
+        flightDesignatorField.styleProperty().bind(
+                Bindings.when(model.isValidFlightDesignatorProperty()).then("-fx-border-color: none;").otherwise("-fx-border-color: red;")
+        );
+        departureAirportField.styleProperty().bind(
+                Bindings.when(model.isValidDepartureAirportProperty()).then("-fx-border-color: none;").otherwise("-fx-border-color: red;")
+        );
+        arrivalAirportField.styleProperty().bind(
+                Bindings.when(model.isValidArrivalAirportProperty()).then("-fx-border-color: none;").otherwise("-fx-border-color: red;")
+        );
+    }
 }
+
+
