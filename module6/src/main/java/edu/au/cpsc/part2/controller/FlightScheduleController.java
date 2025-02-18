@@ -47,9 +47,9 @@ public class FlightScheduleController {
         model = new FlightScheduleModel();
         bindFieldsToModel();
 
-        setupDaysOfWeekListeners(); // Setup listeners for day buttons
+        setupDaysOfWeekListeners();
 
-        // Enable/disable buttons based on validation and state of the model
+
         addButton.disableProperty().bind(
                 Bindings.or(
                         Bindings.or(
@@ -60,7 +60,7 @@ public class FlightScheduleController {
                                 )
                         ),
                         Bindings.or(
-                                isValidDaysOfWeek.not(), // Include validation for days of the week
+                                isValidDaysOfWeek.not(),
                                 Bindings.and(
                                         model.isNewProperty().not(),
                                         model.isModifiedProperty().not()
@@ -68,7 +68,9 @@ public class FlightScheduleController {
                         )
                 )
         );
-        removeButton.disableProperty().bind(model.isNewProperty());
+        removeButton.disableProperty().bind(
+                Bindings.isEmpty(flightTableView.getSelectionModel().getSelectedItems()) // Enable remove button only when a flight is selected
+        );
     }
 
     private AirlineDatabase loadDatabase() {
