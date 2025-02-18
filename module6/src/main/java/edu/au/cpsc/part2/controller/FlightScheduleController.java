@@ -33,7 +33,7 @@ public class FlightScheduleController {
     private AirlineDatabase database;
     private FlightScheduleModel model;
 
-    private BooleanProperty isValidDaysOfWeek = new SimpleBooleanProperty(false); // Added property
+    private BooleanProperty isValidDaysOfWeek = new SimpleBooleanProperty(false);
 
     public void initialize() {
         flightDesignatorColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFlightDesignator()));
@@ -47,9 +47,9 @@ public class FlightScheduleController {
         model = new FlightScheduleModel();
         bindFieldsToModel();
 
-        setupDaysOfWeekListeners();
+        setupDaysOfWeekListeners(); // Setup listeners for day buttons
 
-
+        // Enable/disable buttons based on validation and state of the model
         addButton.disableProperty().bind(
                 Bindings.or(
                         Bindings.or(
@@ -60,7 +60,7 @@ public class FlightScheduleController {
                                 )
                         ),
                         Bindings.or(
-                                isValidDaysOfWeek.not(),
+                                isValidDaysOfWeek.not(), // Include validation for days of the week
                                 Bindings.and(
                                         model.isNewProperty().not(),
                                         model.isModifiedProperty().not()
@@ -68,6 +68,7 @@ public class FlightScheduleController {
                         )
                 )
         );
+
         removeButton.disableProperty().bind(
                 Bindings.isEmpty(flightTableView.getSelectionModel().getSelectedItems()) // Enable remove button only when a flight is selected
         );
@@ -124,6 +125,11 @@ public class FlightScheduleController {
         fridayButton.setSelected(false);
         saturdayButton.setSelected(false);
         sundayButton.setSelected(false);
+
+        // Ensure the fields are set back to red when cleared
+        flightDesignatorField.setStyle("-fx-border-color: red;");
+        departureAirportField.setStyle("-fx-border-color: red;");
+        arrivalAirportField.setStyle("-fx-border-color: red;");
     }
 
     private ScheduledFlight createScheduledFlightFromFields() {
@@ -162,6 +168,11 @@ public class FlightScheduleController {
         flightDesignatorField.textProperty().bindBidirectional(model.flightDesignatorProperty());
         departureAirportField.textProperty().bindBidirectional(model.departureAirportProperty());
         arrivalAirportField.textProperty().bindBidirectional(model.arrivalAirportProperty());
+
+        // Set initial red borders
+        flightDesignatorField.setStyle("-fx-border-color: red;");
+        departureAirportField.setStyle("-fx-border-color: red;");
+        arrivalAirportField.setStyle("-fx-border-color: red;");
 
         flightDesignatorField.textProperty().addListener((observable, oldValue, newValue) -> {
             model.setValidFlightDesignator(!newValue.trim().isEmpty());
@@ -204,5 +215,9 @@ public class FlightScheduleController {
         System.out.println("Days of Week Valid: " + anySelected); // Debug print
     }
 }
+
+
+
+
 
 

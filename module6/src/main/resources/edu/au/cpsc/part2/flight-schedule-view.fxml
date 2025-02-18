@@ -53,13 +53,13 @@
                 </rowConstraints>
                 <children>
                     <Label text="Flight Designator:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                    <TextField fx:id="flightDesignatorField" GridPane.columnIndex="1" GridPane.rowIndex="0" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="flightDesignatorField" style="-fx-border-color: red;" GridPane.columnIndex="1" GridPane.rowIndex="0" HBox.hgrow="ALWAYS" />
 
                     <Label text="Departure Airport:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <TextField fx:id="departureAirportField" GridPane.columnIndex="1" GridPane.rowIndex="1" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="departureAirportField" style="-fx-border-color: red;" GridPane.columnIndex="1" GridPane.rowIndex="1" HBox.hgrow="ALWAYS" />
 
                     <Label text="Arrival Airport:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                    <TextField fx:id="arrivalAirportField" GridPane.columnIndex="1" GridPane.rowIndex="2" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="arrivalAirportField" style="-fx-border-color: red;" GridPane.columnIndex="1" GridPane.rowIndex="2" HBox.hgrow="ALWAYS" />
 
                     <!-- Toggle Buttons for Days of Week -->
                     <Label text="Days of Week:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
