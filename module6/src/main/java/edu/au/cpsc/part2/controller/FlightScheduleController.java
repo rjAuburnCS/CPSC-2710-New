@@ -5,6 +5,8 @@ import edu.au.cpsc.part2.data.AirlineDatabaseIO;
 import edu.au.cpsc.part2.model.FlightScheduleModel;
 import edu.au.cpsc.part2.model.ScheduledFlight;
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -31,6 +33,8 @@ public class FlightScheduleController {
     private AirlineDatabase database;
     private FlightScheduleModel model;
 
+    private BooleanProperty isValidDaysOfWeek = new SimpleBooleanProperty(false); // Added property
+
     public void initialize() {
         flightDesignatorColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFlightDesignator()));
         departureAirportColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDepartureAirportIdent()));
@@ -43,6 +47,8 @@ public class FlightScheduleController {
         model = new FlightScheduleModel();
         bindFieldsToModel();
 
+        setupDaysOfWeekListeners(); // Setup listeners for day buttons
+
         // Enable/disable buttons based on validation and state of the model
         addButton.disableProperty().bind(
                 Bindings.or(
@@ -53,9 +59,12 @@ public class FlightScheduleController {
                                         model.isValidArrivalAirportProperty().not()
                                 )
                         ),
-                        Bindings.and(
-                                model.isNewProperty().not(),
-                                model.isModifiedProperty().not()
+                        Bindings.or(
+                                isValidDaysOfWeek.not(), // Include validation for days of the week
+                                Bindings.and(
+                                        model.isNewProperty().not(),
+                                        model.isModifiedProperty().not()
+                                )
                         )
                 )
         );
@@ -171,6 +180,26 @@ public class FlightScheduleController {
         arrivalAirportField.styleProperty().bind(
                 Bindings.when(model.isValidArrivalAirportProperty()).then("-fx-border-color: none;").otherwise("-fx-border-color: red;")
         );
+    }
+
+    private void setupDaysOfWeekListeners() {
+        ToggleButton[] dayButtons = {mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton, saturdayButton, sundayButton};
+
+        for (ToggleButton dayButton : dayButtons) {
+            dayButton.selectedProperty().addListener((obs, oldVal, newVal) -> updateDaysOfWeekValidity(dayButtons));
+        }
+    }
+
+    private void updateDaysOfWeekValidity(ToggleButton[] dayButtons) {
+        boolean anySelected = false;
+        for (ToggleButton dayButton : dayButtons) {
+            if (dayButton.isSelected()) {
+                anySelected = true;
+                break;
+            }
+        }
+        isValidDaysOfWeek.set(anySelected);
+        System.out.println("Days of Week Valid: " + anySelected); // Debug print
     }
 }
 
