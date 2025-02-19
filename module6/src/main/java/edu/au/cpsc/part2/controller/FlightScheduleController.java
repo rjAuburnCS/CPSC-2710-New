@@ -176,23 +176,24 @@ public class FlightScheduleController {
     }
 
     private void bindFieldsToModel() {
+
         flightDesignatorField.textProperty().bindBidirectional(model.flightDesignatorProperty());
         departureAirportField.textProperty().bindBidirectional(model.departureAirportProperty());
         arrivalAirportField.textProperty().bindBidirectional(model.arrivalAirportProperty());
 
-        flightDesignatorField.setStyle("-fx-border-color: red;");
-        departureAirportField.setStyle("-fx-border-color: red;");
-        arrivalAirportField.setStyle("-fx-border-color: red;");
 
-        flightDesignatorField.textProperty().addListener((observable, oldValue, newValue) -> {
+        flightDesignatorField.textProperty().addListener((_, __, newValue) -> {
             model.setValidFlightDesignator(!newValue.trim().isEmpty());
         });
-        departureAirportField.textProperty().addListener((observable, oldValue, newValue) -> {
+        departureAirportField.textProperty().addListener((_, __, newValue) -> {
             model.setValidDepartureAirport(!newValue.trim().isEmpty());
         });
-        arrivalAirportField.textProperty().addListener((observable, oldValue, newValue) -> {
+        arrivalAirportField.textProperty().addListener((_, __, newValue) -> {
             model.setValidArrivalAirport(!newValue.trim().isEmpty());
         });
+
+
+
 
         flightDesignatorField.styleProperty().bind(
                 Bindings.when(model.isValidFlightDesignatorProperty()).then("-fx-border-color: none;").otherwise("-fx-border-color: red;")
@@ -204,6 +205,7 @@ public class FlightScheduleController {
                 Bindings.when(model.isValidArrivalAirportProperty()).then("-fx-border-color: none;").otherwise("-fx-border-color: red;")
         );
     }
+
 
     private void setupDaysOfWeekListeners(ToggleButton[] dayButtons) {
         for (ToggleButton dayButton : dayButtons) {
