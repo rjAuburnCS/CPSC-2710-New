@@ -2,7 +2,6 @@ package edu.au.cpsc.part2.model;
 
 import java.io.Serializable;
 import java.time.DayOfWeek;
-import java.time.LocalTime;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -12,17 +11,13 @@ public class ScheduledFlight implements Serializable {
 
     private String flightDesignator;
     private String departureAirportIdent;
-    private LocalTime departureTime;
     private String arrivalAirportIdent;
-    private LocalTime arrivalTime;
     private Set<DayOfWeek> daysOfWeek;
 
-    public ScheduledFlight(String flightDesignator, String departureAirportIdent, LocalTime departureTime, String arrivalAirportIdent, LocalTime arrivalTime, Set<DayOfWeek> daysOfWeek) {
+    public ScheduledFlight(String flightDesignator, String departureAirportIdent, String arrivalAirportIdent, Set<DayOfWeek> daysOfWeek) {
         setFlightDesignator(flightDesignator);
         setDepartureAirportIdent(departureAirportIdent);
-        setDepartureTime(departureTime);
         setArrivalAirportIdent(arrivalAirportIdent);
-        setArrivalTime(arrivalTime);
         setDaysOfWeek(daysOfWeek);
     }
 
@@ -44,15 +39,6 @@ public class ScheduledFlight implements Serializable {
         this.departureAirportIdent = departureAirportIdent;
     }
 
-    public LocalTime getDepartureTime() {
-        return departureTime;
-    }
-
-    public void setDepartureTime(LocalTime departureTime) {
-        if (departureTime == null) throw new IllegalArgumentException("Departure time needs a value");
-        this.departureTime = departureTime;
-    }
-
     public String getArrivalAirportIdent() {
         return arrivalAirportIdent;
     }
@@ -60,15 +46,6 @@ public class ScheduledFlight implements Serializable {
     public void setArrivalAirportIdent(String arrivalAirportIdent) {
         if (arrivalAirportIdent == null) throw new IllegalArgumentException("Arrival Airport Ident needs a value");
         this.arrivalAirportIdent = arrivalAirportIdent;
-    }
-
-    public LocalTime getArrivalTime() {
-        return arrivalTime;
-    }
-
-    public void setArrivalTime(LocalTime arrivalTime) {
-        if (arrivalTime == null) throw new IllegalArgumentException("Arrival time needs a value");
-        this.arrivalTime = arrivalTime;
     }
 
     public Set<DayOfWeek> getDaysOfWeek() {
@@ -109,15 +86,14 @@ public class ScheduledFlight implements Serializable {
         ScheduledFlight that = (ScheduledFlight) o;
         return Objects.equals(flightDesignator, that.flightDesignator) &&
                 Objects.equals(departureAirportIdent, that.departureAirportIdent) &&
-                Objects.equals(departureTime, that.departureTime) &&
                 Objects.equals(arrivalAirportIdent, that.arrivalAirportIdent) &&
-                Objects.equals(arrivalTime, that.arrivalTime) &&
                 Objects.equals(daysOfWeek, that.daysOfWeek);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flightDesignator, departureAirportIdent, departureTime, arrivalAirportIdent, arrivalTime, daysOfWeek);
+        return Objects.hash(flightDesignator, departureAirportIdent, arrivalAirportIdent, daysOfWeek);
     }
 }
+
 

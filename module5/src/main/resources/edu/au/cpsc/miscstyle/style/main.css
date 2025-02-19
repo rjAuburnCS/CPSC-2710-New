@@ -43,7 +43,7 @@ VBox Group > Rectangle {
     -fx-background-color: white;
 }
 
-.check-box .check-mark {
+.check-box .mark {
     -fx-background-color: #7e7f9a;
 }
 

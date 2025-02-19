@@ -13,22 +13,31 @@ import javafx.scene.control.*;
 
 import java.io.*;
 import java.time.DayOfWeek;
-import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 
 public class FlightScheduleController {
 
-    @FXML private TableView<ScheduledFlight> flightTableView;
-    @FXML private TableColumn<ScheduledFlight, String> flightDesignatorColumn;
-    @FXML private TableColumn<ScheduledFlight, String> departureAirportColumn;
-    @FXML private TableColumn<ScheduledFlight, String> arrivalAirportColumn;
-    @FXML private TableColumn<ScheduledFlight, String> daysOfWeekColumn;
-    @FXML private TextField flightDesignatorField;
-    @FXML private TextField departureAirportField;
-    @FXML private TextField arrivalAirportField;
-    @FXML private ToggleButton mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton, saturdayButton, sundayButton;
-    @FXML private Button addButton, removeButton, clearButton;
+    @FXML
+    private TableView<ScheduledFlight> flightTableView;
+    @FXML
+    private TableColumn<ScheduledFlight, String> flightDesignatorColumn;
+    @FXML
+    private TableColumn<ScheduledFlight, String> departureAirportColumn;
+    @FXML
+    private TableColumn<ScheduledFlight, String> arrivalAirportColumn;
+    @FXML
+    private TableColumn<ScheduledFlight, String> daysOfWeekColumn;
+    @FXML
+    private TextField flightDesignatorField;
+    @FXML
+    private TextField departureAirportField;
+    @FXML
+    private TextField arrivalAirportField;
+    @FXML
+    private ToggleButton mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton, saturdayButton, sundayButton;
+    @FXML
+    private Button addButton, removeButton, clearButton;
 
     private AirlineDatabase database;
     private FlightScheduleModel model;
@@ -47,8 +56,9 @@ public class FlightScheduleController {
         model = new FlightScheduleModel();
         bindFieldsToModel();
 
-        setupDaysOfWeekListeners();
-
+        ToggleButton[] dayButtons = {mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton, saturdayButton, sundayButton};
+        setupDaysOfWeekListeners(dayButtons);
+        bindDaysOfWeekStyles(dayButtons);
 
         addButton.disableProperty().bind(
                 Bindings.or(
@@ -90,7 +100,8 @@ public class FlightScheduleController {
         }
     }
 
-    @FXML private void handleAddFlight() {
+    @FXML
+    private void handleAddFlight() {
         System.out.println("Add button clicked");
 
         ScheduledFlight flight = createScheduledFlightFromFields();
@@ -101,7 +112,8 @@ public class FlightScheduleController {
         }
     }
 
-    @FXML private void handleRemoveFlight() {
+    @FXML
+    private void handleRemoveFlight() {
         System.out.println("Remove button clicked");
 
         ScheduledFlight selectedFlight = flightTableView.getSelectionModel().getSelectedItem();
@@ -112,7 +124,8 @@ public class FlightScheduleController {
         }
     }
 
-    @FXML private void handleClearFields() {
+    @FXML
+    private void handleClearFields() {
         System.out.println("Clear button clicked");
 
         flightDesignatorField.clear();
@@ -126,7 +139,6 @@ public class FlightScheduleController {
         saturdayButton.setSelected(false);
         sundayButton.setSelected(false);
 
-
         flightDesignatorField.setStyle("-fx-border-color: red;");
         departureAirportField.setStyle("-fx-border-color: red;");
         arrivalAirportField.setStyle("-fx-border-color: red;");
@@ -136,8 +148,6 @@ public class FlightScheduleController {
         String flightDesignator = flightDesignatorField.getText().trim();
         String departureAirportIdent = departureAirportField.getText().trim();
         String arrivalAirportIdent = arrivalAirportField.getText().trim();
-        LocalTime departureTime = LocalTime.of(0, 0);
-        LocalTime arrivalTime = LocalTime.of(0, 0);
         Set<DayOfWeek> daysOfWeek = new HashSet<>();
 
         if (mondayButton.isSelected()) daysOfWeek.add(DayOfWeek.MONDAY);
@@ -153,8 +163,9 @@ public class FlightScheduleController {
             return null;
         }
 
-        return new ScheduledFlight(flightDesignator, departureAirportIdent, departureTime, arrivalAirportIdent, arrivalTime, daysOfWeek);
+        return new ScheduledFlight(flightDesignator, departureAirportIdent, arrivalAirportIdent, daysOfWeek);
     }
+
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -168,7 +179,6 @@ public class FlightScheduleController {
         flightDesignatorField.textProperty().bindBidirectional(model.flightDesignatorProperty());
         departureAirportField.textProperty().bindBidirectional(model.departureAirportProperty());
         arrivalAirportField.textProperty().bindBidirectional(model.arrivalAirportProperty());
-
 
         flightDesignatorField.setStyle("-fx-border-color: red;");
         departureAirportField.setStyle("-fx-border-color: red;");
@@ -195,9 +205,7 @@ public class FlightScheduleController {
         );
     }
 
-    private void setupDaysOfWeekListeners() {
-        ToggleButton[] dayButtons = {mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton, saturdayButton, sundayButton};
-
+    private void setupDaysOfWeekListeners(ToggleButton[] dayButtons) {
         for (ToggleButton dayButton : dayButtons) {
             dayButton.selectedProperty().addListener((obs, oldVal, newVal) -> updateDaysOfWeekValidity(dayButtons));
         }
@@ -213,6 +221,16 @@ public class FlightScheduleController {
         }
         isValidDaysOfWeek.set(anySelected);
         System.out.println("Days of Week Valid: " + anySelected);
+    }
+
+    private void bindDaysOfWeekStyles(ToggleButton[] dayButtons) {
+        for (ToggleButton dayButton : dayButtons) {
+            dayButton.styleProperty().bind(
+                    Bindings.when(isValidDaysOfWeek)
+                            .then("-fx-border-color: none;")
+                            .otherwise("-fx-border-color: red;")
+            );
+        }
     }
 }
 
