@@ -1,4 +1,4 @@
-package edu.au.cpsc.part2.model;
+package edu.au.cpsc.part2.model.part2;
 
 import javafx.beans.property.*;
 

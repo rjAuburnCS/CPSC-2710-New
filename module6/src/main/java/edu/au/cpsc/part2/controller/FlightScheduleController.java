@@ -2,7 +2,7 @@ package edu.au.cpsc.part2.controller;
 
 import edu.au.cpsc.part2.data.AirlineDatabase;
 import edu.au.cpsc.part2.data.AirlineDatabaseIO;
-import edu.au.cpsc.part2.model.FlightScheduleModel;
+import edu.au.cpsc.part2.model.part2.FlightScheduleModel;
 import edu.au.cpsc.part2.model.ScheduledFlight;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
