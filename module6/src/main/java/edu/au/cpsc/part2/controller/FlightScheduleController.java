@@ -5,6 +5,7 @@ import edu.au.cpsc.part2.data.AirlineDatabaseIO;
 import edu.au.cpsc.part2.model.part2.FlightScheduleModel;
 import edu.au.cpsc.part2.model.ScheduledFlight;
 import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -17,6 +18,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class FlightScheduleController {
+
+    private static final String VALID_STYLE = "-fx-border-color: none;";
+    private static final String INVALID_STYLE = "-fx-border-color: red;";
 
     @FXML
     private TableView<ScheduledFlight> flightTableView;
@@ -60,28 +64,16 @@ public class FlightScheduleController {
         setupDaysOfWeekListeners(dayButtons);
         bindDaysOfWeekStyles(dayButtons);
 
-        addButton.disableProperty().bind(
-                Bindings.or(
-                        Bindings.or(
-                                model.isValidFlightDesignatorProperty().not(),
-                                Bindings.or(
-                                        model.isValidDepartureAirportProperty().not(),
-                                        model.isValidArrivalAirportProperty().not()
-                                )
-                        ),
-                        Bindings.or(
-                                isValidDaysOfWeek.not(),
-                                Bindings.and(
-                                        model.isNewProperty().not(),
-                                        model.isModifiedProperty().not()
-                                )
-                        )
-                )
-        );
+        BooleanBinding allFieldsValid = model.isValidFlightDesignatorProperty()
+                .and(model.isValidDepartureAirportProperty())
+                .and(model.isValidArrivalAirportProperty());
 
-        removeButton.disableProperty().bind(
-                Bindings.isEmpty(flightTableView.getSelectionModel().getSelectedItems())
-        );
+        BooleanBinding canAdd = allFieldsValid
+                .and(isValidDaysOfWeek)
+                .and(Bindings.or(model.isNewProperty(), model.isModifiedProperty()));
+
+        addButton.disableProperty().bind(canAdd.not());
+        removeButton.disableProperty().bind(Bindings.isEmpty(flightTableView.getSelectionModel().getSelectedItems()));
     }
 
     private AirlineDatabase loadDatabase() {
@@ -139,9 +131,9 @@ public class FlightScheduleController {
         saturdayButton.setSelected(false);
         sundayButton.setSelected(false);
 
-        flightDesignatorField.setStyle("-fx-border-color: red;");
-        departureAirportField.setStyle("-fx-border-color: red;");
-        arrivalAirportField.setStyle("-fx-border-color: red;");
+        flightDesignatorField.setStyle(INVALID_STYLE);
+        departureAirportField.setStyle(INVALID_STYLE);
+        arrivalAirportField.setStyle(INVALID_STYLE);
     }
 
     private ScheduledFlight createScheduledFlightFromFields() {
@@ -166,7 +158,6 @@ public class FlightScheduleController {
         return new ScheduledFlight(flightDesignator, departureAirportIdent, arrivalAirportIdent, daysOfWeek);
     }
 
-
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -176,11 +167,9 @@ public class FlightScheduleController {
     }
 
     private void bindFieldsToModel() {
-
         flightDesignatorField.textProperty().bindBidirectional(model.flightDesignatorProperty());
         departureAirportField.textProperty().bindBidirectional(model.departureAirportProperty());
         arrivalAirportField.textProperty().bindBidirectional(model.arrivalAirportProperty());
-
 
         flightDesignatorField.textProperty().addListener((_, __, newValue) -> {
             model.setValidFlightDesignator(!newValue.trim().isEmpty());
@@ -192,20 +181,16 @@ public class FlightScheduleController {
             model.setValidArrivalAirport(!newValue.trim().isEmpty());
         });
 
-
-
-
         flightDesignatorField.styleProperty().bind(
-                Bindings.when(model.isValidFlightDesignatorProperty()).then("-fx-border-color: none;").otherwise("-fx-border-color: red;")
+                Bindings.when(model.isValidFlightDesignatorProperty()).then(VALID_STYLE).otherwise(INVALID_STYLE)
         );
         departureAirportField.styleProperty().bind(
-                Bindings.when(model.isValidDepartureAirportProperty()).then("-fx-border-color: none;").otherwise("-fx-border-color: red;")
+                Bindings.when(model.isValidDepartureAirportProperty()).then(VALID_STYLE).otherwise(INVALID_STYLE)
         );
         arrivalAirportField.styleProperty().bind(
-                Bindings.when(model.isValidArrivalAirportProperty()).then("-fx-border-color: none;").otherwise("-fx-border-color: red;")
+                Bindings.when(model.isValidArrivalAirportProperty()).then(VALID_STYLE).otherwise(INVALID_STYLE)
         );
     }
-
 
     private void setupDaysOfWeekListeners(ToggleButton[] dayButtons) {
         for (ToggleButton dayButton : dayButtons) {
@@ -229,15 +214,12 @@ public class FlightScheduleController {
         for (ToggleButton dayButton : dayButtons) {
             dayButton.styleProperty().bind(
                     Bindings.when(isValidDaysOfWeek)
-                            .then("-fx-border-color: none;")
-                            .otherwise("-fx-border-color: red;")
+                            .then(VALID_STYLE)
+                            .otherwise(INVALID_STYLE)
             );
         }
     }
 }
-
-
-
 
 
 

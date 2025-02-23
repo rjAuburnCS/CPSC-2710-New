@@ -14,13 +14,17 @@ public class FlightScheduleModel {
     private final BooleanProperty isValidDepartureAirport = new SimpleBooleanProperty(false);
     private final BooleanProperty isValidArrivalAirport = new SimpleBooleanProperty(false);
 
+    private void validateAndSet(StringProperty property, String value, BooleanProperty validProperty) {
+        property.set(value);
+        validProperty.set(!value.trim().isEmpty());
+    }
+
     public String getFlightDesignator() {
         return flightDesignator.get();
     }
 
     public void setFlightDesignator(String flightDesignator) {
-        this.flightDesignator.set(flightDesignator);
-        setValidFlightDesignator(!flightDesignator.trim().isEmpty());
+        validateAndSet(this.flightDesignator, flightDesignator, isValidFlightDesignator);
     }
 
     public StringProperty flightDesignatorProperty() {
@@ -32,8 +36,7 @@ public class FlightScheduleModel {
     }
 
     public void setDepartureAirport(String departureAirport) {
-        this.departureAirport.set(departureAirport);
-        setValidDepartureAirport(!departureAirport.trim().isEmpty());
+        validateAndSet(this.departureAirport, departureAirport, isValidDepartureAirport);
     }
 
     public StringProperty departureAirportProperty() {
@@ -45,8 +48,7 @@ public class FlightScheduleModel {
     }
 
     public void setArrivalAirport(String arrivalAirport) {
-        this.arrivalAirport.set(arrivalAirport);
-        setValidArrivalAirport(!arrivalAirport.trim().isEmpty());
+        validateAndSet(this.arrivalAirport, arrivalAirport, isValidArrivalAirport);
     }
 
     public StringProperty arrivalAirportProperty() {
@@ -113,5 +115,4 @@ public class FlightScheduleModel {
         this.isValidArrivalAirport.set(isValidArrivalAirport);
     }
 }
-
 
