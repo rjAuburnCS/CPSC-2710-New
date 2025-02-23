@@ -16,7 +16,7 @@ public class FlightScheduleApplication extends Application {
         stage.setTitle("Flight Schedule Application");
         stage.setScene(scene);
 
-        stage.setOnCloseRequest(event -> {
+        stage.setOnCloseRequest(_ -> {
             FlightScheduleController controller = fxmlLoader.getController();
             controller.saveDatabase();
         });
