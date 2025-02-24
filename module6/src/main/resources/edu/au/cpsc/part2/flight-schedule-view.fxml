@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.part2.controller.FlightScheduleController">
+    <top>
+        <HBox alignment="CENTER">
+            <Label text="Flight Schedule Application" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+    <center>
+        <VBox>
+            <TableView fx:id="flightTableView" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="flightDesignatorColumn" text="Flight Designator" />
+                    <TableColumn fx:id="departureAirportColumn" text="Departure Airport" />
+                    <TableColumn fx:id="arrivalAirportColumn" text="Arrival Airport" />
+                    <TableColumn fx:id="daysOfWeekColumn" text="Days of Week" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <bottom>
+        <VBox spacing="10">
+            <GridPane hgap="10" vgap="10" style="-fx-padding: 10;">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                </rowConstraints>
+                <children>
+                    <Label text="Flight Designator:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="flightDesignatorField" style="-fx-border-color: red;" GridPane.columnIndex="1" GridPane.rowIndex="0" HBox.hgrow="ALWAYS" />
+
+                    <Label text="Departure Airport:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="departureAirportField" style="-fx-border-color: red;" GridPane.columnIndex="1" GridPane.rowIndex="1" HBox.hgrow="ALWAYS" />
+
+                    <Label text="Arrival Airport:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="arrivalAirportField" style="-fx-border-color: red;" GridPane.columnIndex="1" GridPane.rowIndex="2" HBox.hgrow="ALWAYS" />
+                    <Label text="Days of Week:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3" HBox.hgrow="ALWAYS">
+                        <ToggleButton fx:id="mondayButton" text="Monday" />
+                        <ToggleButton fx:id="tuesdayButton" text="Tuesday" />
+                        <ToggleButton fx:id="wednesdayButton" text="Wednesday/HumpDay" />
+                        <ToggleButton fx:id="thursdayButton" text="Thursday" />
+                        <ToggleButton fx:id="fridayButton" text="Friday" />
+                        <ToggleButton fx:id="saturdayButton" text="Saturday" />
+                        <ToggleButton fx:id="sundayButton" text="Sunday" />
+                    </HBox>
+                </children>
+            </GridPane>
+            <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
+                <Button fx:id="addButton" text="Add" onAction="#handleAddFlight" />
+                <Button fx:id="removeButton" text="Remove" onAction="#handleRemoveFlight" />
+                <Button fx:id="clearButton" text="Clear" onAction="#handleClearFields" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
+
+
+
+
+
+
+
