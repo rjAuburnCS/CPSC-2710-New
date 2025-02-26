@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f93a4620-7f13-48a4-852d-fb95839c651f" name="Changes" comment="" />
+    <list default="true" id="f93a4620-7f13-48a4-852d-fb95839c651f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../module6/flights.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/flights.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module7/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/RyanTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/RyanMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module7/src/main/resources/edu/au/cpsc/module7/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/src/main/resources/Main-Window-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +53,7 @@
     "Application.Part1Application.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "branch7",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ryansmith/CPSC-2710-NEW/module5",
     "project.structure.last.edited": "Modules",
