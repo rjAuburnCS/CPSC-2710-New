@@ -1,50 +1,43 @@
 /* General settings */
 .root {
     -fx-background-color: #000000;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: #00FF00; /* Green text */
 }
 
 /* MenuBar settings */
 .menu-bar {
-    -fx-background-color: #000000;
-    -fx-text-fill: #FFFFFF;
+    -fx-background-color: orange;
+    -fx-text-fill: #00FF00; /* Green text */
 }
 
 .menu {
-    -fx-background-color: #000000;
-    -fx-text-fill: #FFFFFF;
+    -fx-background-color: orange;
+    -fx-text-fill: #00FF00; /* Green text */
 }
 
 .menu-item {
-    -fx-background-color: #000000;
-    -fx-text-fill: #FFFFFF;
+    -fx-background-color: orange;
+    -fx-text-fill: #00FF00; /* Green text */
 }
 
 .separator-menu-item {
-    -fx-background-color: #000000;
+    -fx-background-color: orange;
 }
 
 /* ListView settings */
 .list-view {
-    -fx-background-color: #000000;
-    -fx-text-fill: #FFFFFF;
+    -fx-background-color: orange;
+    -fx-text-fill: #00FF00; /* Green text */
 }
 
 /* Button settings */
 .button {
     -fx-background-color: #000000;
-    -fx-text-fill: #FFFFFF;
-    -fx-border-color: #FFFFFF;
+    -fx-text-fill: #00FF00; /* Green text */
+    -fx-border-color: #00FF00;
 }
 
 /* AnchorPane settings */
-.anchor-pane {
+.AnchorPane {
     -fx-background-color: #000000;
 }
-
-/* Specific ListView items */
-.list-view .cell {
-    -fx-background-color: #000000;
-    -fx-text-fill: #FFFFFF;
-}
-
