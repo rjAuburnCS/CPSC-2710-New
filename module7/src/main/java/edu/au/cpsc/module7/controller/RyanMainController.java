@@ -147,7 +147,3 @@ public class RyanMainController implements Initializable {
         }
     }
 }
-
-
-
-

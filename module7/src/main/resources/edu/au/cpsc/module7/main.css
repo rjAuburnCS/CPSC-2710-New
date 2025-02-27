@@ -1,0 +1,50 @@
+/* General settings */
+.root {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* MenuBar settings */
+.menu-bar {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}
+
+.menu {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}
+
+.menu-item {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}
+
+.separator-menu-item {
+    -fx-background-color: #000000;
+}
+
+/* ListView settings */
+.list-view {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Button settings */
+.button {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #FFFFFF;
+}
+
+/* AnchorPane settings */
+.anchor-pane {
+    -fx-background-color: #000000;
+}
+
+/* Specific ListView items */
+.list-view .cell {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}
+

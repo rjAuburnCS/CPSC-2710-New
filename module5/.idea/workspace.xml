@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f93a4620-7f13-48a4-852d-fb95839c651f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../module6/flights.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/flights.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module7/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/RyanTaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/RyanMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module7/src/main/resources/edu/au/cpsc/module7/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/src/main/resources/Main-Window-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/RyanTaskManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/RyanTaskManagerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module7/src/main/java/edu/au/cpsc/module7/controller/RyanMainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module7/src/main/resources/edu/au/cpsc/module7/Main-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/src/main/resources/edu/au/cpsc/module7/Main-View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module7/src/main/resources/edu/au/cpsc/module7/TaskDetail.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module7/src/main/resources/edu/au/cpsc/module7/mystyle/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module7/src/main/resources/edu/au/cpsc/module7/style/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,22 +47,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.LauncherApplication.executor": "Run",
-    "Application.Part1Application.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "branch7",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ryansmith/CPSC-2710-NEW/module5",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LauncherApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Part1Application.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;branch7&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ryansmith/CPSC-2710-NEW/module5&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/edu/au/cpsc/launcher/fonts" />

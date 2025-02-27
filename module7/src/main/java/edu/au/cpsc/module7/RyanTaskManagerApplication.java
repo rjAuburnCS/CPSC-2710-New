@@ -13,7 +13,7 @@ public class RyanTaskManagerApplication extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/au/cpsc/module7/Main-View.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/edu/au/cpsc/module7/mystyle/main.css").toExternalForm()); // Apply CSS
+            scene.getStylesheets().add(getClass().getResource("/edu/au/cpsc/module7/main.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.setTitle("Task Manager");
             primaryStage.show();
@@ -32,5 +32,3 @@ public class RyanTaskManagerApplication extends Application {
         launch(args);
     }
 }
-
-

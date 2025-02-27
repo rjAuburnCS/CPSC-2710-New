@@ -1,0 +1,84 @@
+/* General settings */
+.root {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* HBox settings */
+.hbox {
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+}
+
+/* VBox settings */
+.vbox {
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+}
+
+/* GridPane settings */
+.grid-pane {
+    -fx-padding: 10px;
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+}
+
+/* TableView settings */
+.table-view {
+    -fx-background-color: #000000;
+    -fx-border-color: #FFFFFF;
+}
+
+.table-column {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* TextField settings */
+.text-field {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #FFFFFF;
+}
+
+/* ToggleButton settings */
+.toggle-button {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #FFFFFF;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #000000;
+}
+
+/* Button settings */
+.button {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #FFFFFF;
+}
+
+/* Label settings */
+.label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+}
+
+/* Specific Label settings for title */
+.label.title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* TableView settings */
+.table-view .column-header {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}
+
+.table-view .cell {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}
