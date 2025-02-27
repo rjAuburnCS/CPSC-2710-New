@@ -1,23 +1,23 @@
-/* General settings */
+
 .root {
     -fx-background-color: #000000;
-    -fx-text-fill: #00FF00; /* Green text */
+    -fx-text-fill: #00FF00;
 }
 
-/* MenuBar settings */
+
 .menu-bar {
     -fx-background-color: orange;
-    -fx-text-fill: #00FF00; /* Green text */
+    -fx-text-fill: #00FF00;
 }
 
 .menu {
     -fx-background-color: orange;
-    -fx-text-fill: #00FF00; /* Green text */
+    -fx-text-fill: #00FF00;
 }
 
 .menu-item {
     -fx-background-color: orange;
-    -fx-text-fill: #00FF00; /* Green text */
+    -fx-text-fill: #00FF00;
 }
 
 .separator-menu-item {
@@ -26,14 +26,29 @@
 
 /* ListView settings */
 .list-view {
-    -fx-background-color: orange;
+    -fx-background-color: #808080; /* Grey background */
+    -fx-control-inner-background: #808080; /* Inner background color */
     -fx-text-fill: #00FF00; /* Green text */
+    -fx-cell-text-fill: #00FF00; /* Green text for list items */
 }
+
+/* ListCell settings (for individual items) */
+.list-view .list-cell {
+    -fx-background-color: #808080; /* Grey background for list items */
+    -fx-text-fill: #00FF00 !important; /* Green text for list items */
+}
+
+/* ListCell focused settings */
+.list-view .list-cell:focused {
+    -fx-background-color: #00FF00; /* Green background when focused */
+    -fx-text-fill: #000000 !important; /* Black text when focused */
+}
+
 
 /* Button settings */
 .button {
     -fx-background-color: #000000;
-    -fx-text-fill: #00FF00; /* Green text */
+    -fx-text-fill: #00FF00;
     -fx-border-color: #00FF00;
 }
 

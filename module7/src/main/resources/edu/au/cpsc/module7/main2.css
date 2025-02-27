@@ -1,6 +1,62 @@
-/* General settings */
+
 .root {
-    -fx-background-color: lightblue;
-    -fx-text-fill: black; /* Green text */
+    -fx-background-color: #000000;
+    -fx-text-fill: #00FF00;
 }
+
+
+.label {
+    -fx-text-fill: #00FF00;
+    -fx-font-size: 16px;
+}
+
+
+.text-field {
+    -fx-background-color: #000000;
+    -fx-text-fill: #00FF00;
+    -fx-border-color: #00FF00;
+}
+
+
+.text-area {
+    -fx-background-color: black !important; /* Border background */
+    -fx-control-inner-background: black !important; /* Inner background */
+    -fx-text-fill: #00FF00 !important;
+    -fx-border-color: #00FF00;
+    -fx-background-insets: 0;
+}
+
+/* When the TextArea is focused */
+.text-area:focused {
+    -fx-background-color: black !important;
+    -fx-control-inner-background: black !important;
+}
+
+/* When the TextArea is hovered */
+.text-area:hover {
+    -fx-background-color: black !important;
+    -fx-control-inner-background: black !important
+
+}
+
+
+
+
+.date-picker {
+    -fx-background-color: #000000;
+    -fx-text-fill: #00FF00;
+    -fx-border-color: #00FF00;
+    -fx-highlight-fill: #00FF00;
+    -fx-highlight-text-fill: #000000;
+}
+
+
+.button {
+    -fx-background-color: #000000;
+    -fx-text-fill: #00FF00;
+    -fx-border-color: #00FF00;
+}
+
+
+
 

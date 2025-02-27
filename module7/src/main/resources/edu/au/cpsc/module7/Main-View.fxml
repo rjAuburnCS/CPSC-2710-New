@@ -14,21 +14,22 @@
             <menus>
                 <Menu styleClass="menu" text="File">
                     <items>
-                        <MenuItem fx:id="newMenuItem" onAction="#handleNew" styleClass="menu-item" text="New" />
-                        <MenuItem fx:id="saveMenuItem" onAction="#handleSave" styleClass="menu-item" text="Save" />
+                        <MenuItem fx:id="newMenuItem" onAction="#handleNew" styleClass="menu-item" text="New" accelerator="Ctrl+N"/>
+                        <MenuItem fx:id="saveMenuItem" onAction="#handleSave" styleClass="menu-item" text="Save" accelerator="Ctrl+S"/>
                         <SeparatorMenuItem styleClass="separator-menu-item" />
-                        <MenuItem fx:id="exitMenuItem" onAction="#handleExit" styleClass="menu-item" text="Exit" />
+                        <MenuItem fx:id="exitMenuItem" onAction="#handleExit" styleClass="menu-item" text="Exit" accelerator="Ctrl+Q"/>
                     </items>
                 </Menu>
                 <Menu styleClass="menu" text="Edit">
                     <items>
-                        <MenuItem fx:id="addTaskMenuItem" onAction="#handleAddTask" styleClass="menu-item" text="Add Task" />
-                        <MenuItem fx:id="editTaskMenuItem" onAction="#handleEditTask" styleClass="menu-item" text="Edit Task" />
-                        <MenuItem fx:id="deleteTaskMenuItem" onAction="#handleDeleteTask" styleClass="menu-item" text="Delete Task" />
+                        <MenuItem fx:id="addTaskMenuItem" onAction="#handleAddTask" styleClass="menu-item" text="Add Task" accelerator="Ctrl+A"/>
+                        <MenuItem fx:id="editTaskMenuItem" onAction="#handleEditTask" styleClass="menu-item" text="Edit Task" accelerator="Ctrl+E"/>
+                        <MenuItem fx:id="deleteTaskMenuItem" onAction="#handleDeleteTask" styleClass="menu-item" text="Delete Task" accelerator="Ctrl+D"/>
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
+
 
         <ListView fx:id="taskListView" layoutX="10.0" layoutY="30.0" prefHeight="200.0" prefWidth="380.0" styleClass="list-view" stylesheets="@main.css" />
 

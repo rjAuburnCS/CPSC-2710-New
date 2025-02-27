@@ -9,16 +9,16 @@
 
 <AnchorPane stylesheets="@main2.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module7.controller.TaskDetailController">
     <children>
-        <Label layoutX="10.0" layoutY="10.0" styleClass="label" stylesheets="@main2.css" text="Task Name" />
-        <TextField fx:id="taskNameField" layoutX="100.0" layoutY="10.0" prefWidth="200.0" styleClass="text-field" stylesheets="@main2.css" />
+        <Label layoutX="10.0" layoutY="10.0" styleClass="label" text="Task Name" />
+        <TextField fx:id="taskNameField" layoutX="100.0" layoutY="10.0" prefWidth="200.0" styleClass="text-field" />
 
-        <Label layoutX="10.0" layoutY="50.0" styleClass="label" stylesheets="@main2.css" text="Description" />
-        <TextArea fx:id="taskDescriptionArea" layoutX="100.0" layoutY="50.0" prefHeight="100.0" prefWidth="200.0" styleClass="text-area" stylesheets="@main2.css" />
+        <Label layoutX="10.0" layoutY="50.0" styleClass="label" text="Description" />
+        <TextArea fx:id="taskDescriptionArea" layoutX="100.0" layoutY="50.0" prefHeight="100.0" prefWidth="200.0" styleClass="text-area" />
 
-        <Label layoutX="10.0" layoutY="170.0" styleClass="label" stylesheets="@main2.css" text="Due Date" />
-        <DatePicker fx:id="dueDatePicker" layoutX="100.0" layoutY="170.0" styleClass="date-picker" stylesheets="@main2.css" />
+        <Label layoutX="10.0" layoutY="170.0" styleClass="label" text="Due Date" />
+        <DatePicker fx:id="dueDatePicker" layoutX="100.0" layoutY="170.0" styleClass="date-picker" />
 
-        <Button layoutX="100.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleSave" styleClass="button" stylesheets="@main2.css" text="Save" />
-        <Button layoutX="160.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="button" stylesheets="@main2.css" text="Cancel" />
+        <Button layoutX="100.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleSave" styleClass="button" text="Save" />
+        <Button layoutX="160.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="button" text="Cancel" />
     </children>
 </AnchorPane>
