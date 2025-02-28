@@ -2,6 +2,8 @@
 .root {
     -fx-background-color: #000000;
     -fx-text-fill: #00FF00;
+    -fx-font-size: 13px;
+    -fx-font-family: "Arial Black";
 }
 
 
@@ -12,15 +14,15 @@
 
 
 .text-field {
-    -fx-background-color: #000000;
+    -fx-background-color: grey;
     -fx-text-fill: #00FF00;
     -fx-border-color: #00FF00;
 }
 
 
 .text-area {
-    -fx-background-color: black !important; /* Border background */
-    -fx-control-inner-background: black !important; /* Inner background */
+    -fx-background-color: grey;
+    -fx-control-inner-background: grey !important;
     -fx-text-fill: #00FF00 !important;
     -fx-border-color: #00FF00;
     -fx-background-insets: 0;
@@ -28,19 +30,19 @@
 
 /* When the TextArea is focused */
 .text-area:focused {
-    -fx-background-color: black !important;
-    -fx-control-inner-background: black !important;
+    -fx-background-color: grey;
+    -fx-control-inner-background: grey;
 }
 
 /* When the TextArea is hovered */
 .text-area:hover {
-    -fx-background-color: black !important;
-    -fx-control-inner-background: black !important
+    -fx-background-color: grey !important;
+    -fx-control-inner-background: grey;
 
 }
 
 .button:hover {
-    -fx-font-size: 18px;
+    -fx-font-size: 15px;
     }
 
 
