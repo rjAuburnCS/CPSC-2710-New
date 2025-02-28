@@ -30,12 +30,15 @@
     -fx-control-inner-background: #808080;
     -fx-text-fill: #00FF00;
     -fx-cell-text-fill: #00FF00;
+
 }
 
 
 .list-view .list-cell {
     -fx-background-color: #808080;
     -fx-text-fill: #00FF00 !important;
+    -fx-border-color: darkgrey;
+
 }
 
 
