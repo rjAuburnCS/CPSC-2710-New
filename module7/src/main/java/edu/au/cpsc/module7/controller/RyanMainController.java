@@ -50,7 +50,7 @@ public class RyanMainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         handleLoad();
 
-        // Set custom cell factory to ensure date wraps under the description
+        
         taskListView.setCellFactory(lv -> new ListCell<String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
@@ -58,10 +58,10 @@ public class RyanMainController implements Initializable {
                 if (empty || item == null) {
                     setText(null);
                 } else {
-                    // Split the task details to separate the description and date
+
                     String[] parts = item.split(" - ");
                     if (parts.length >= 2) {
-                        // Display the description and date on separate lines
+
                         setText(parts[0] + "\n" + parts[1]);
                     } else {
                         setText(item);
