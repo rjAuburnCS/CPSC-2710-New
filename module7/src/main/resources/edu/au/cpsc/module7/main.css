@@ -26,7 +26,7 @@
 
 
 .list-view {
-    -fx-background-color: #808080;
+    -fx-background-color: darkgrey;
     -fx-control-inner-background: #808080;
     -fx-text-fill: #00FF00;
     -fx-cell-text-fill: #00FF00;
@@ -35,7 +35,7 @@
 
 
 .list-view .list-cell {
-    -fx-background-color: #808080;
+    -fx-background-color: grey;
     -fx-text-fill: #00FF00 !important;
     -fx-border-color: darkgrey;
 
@@ -50,9 +50,9 @@
 
 
 .button {
-    -fx-background-color: #000000;
-    -fx-text-fill: #00FF00;
-    -fx-border-color: #00FF00;
+    -fx-background-color: orange;
+    -fx-text-fill: black;
+    -fx-border-color: darkgrey;
 }
 
 
@@ -63,4 +63,5 @@
 
 .button:hover {
     -fx-font-size: 18px;
+
     }

@@ -28,13 +28,13 @@
     -fx-background-insets: 0;
 }
 
-/* When the TextArea is focused */
+
 .text-area:focused {
     -fx-background-color: grey;
     -fx-control-inner-background: grey;
 }
 
-/* When the TextArea is hovered */
+
 .text-area:hover {
     -fx-background-color: grey !important;
     -fx-control-inner-background: grey;
@@ -56,9 +56,9 @@
 
 
 .button {
-    -fx-background-color: #000000;
-    -fx-text-fill: #00FF00;
-    -fx-border-color: #00FF00;
+    -fx-background-color: orange;
+    -fx-text-fill: black;
+    -fx-border-color: darkgrey;
 }
 
 

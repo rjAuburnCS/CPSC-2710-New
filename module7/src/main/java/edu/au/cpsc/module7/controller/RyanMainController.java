@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
@@ -47,8 +48,27 @@ public class RyanMainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Load tasks on initialization
         handleLoad();
+
+        // Set custom cell factory to ensure date wraps under the description
+        taskListView.setCellFactory(lv -> new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    // Split the task details to separate the description and date
+                    String[] parts = item.split(" - ");
+                    if (parts.length >= 2) {
+                        // Display the description and date on separate lines
+                        setText(parts[0] + "\n" + parts[1]);
+                    } else {
+                        setText(item);
+                    }
+                }
+            }
+        });
     }
 
     @FXML
@@ -60,7 +80,7 @@ public class RyanMainController implements Initializable {
     private void handleSave() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("tasks.txt"))) {
             for (String task : taskListView.getItems()) {
-                writer.write(task.replace("\n", "\\n")); // Replace newlines with a placeholder
+                writer.write(task.replace("\n", "\\n"));
                 writer.newLine();
             }
             LOGGER.info("Tasks saved successfully.");
@@ -75,7 +95,7 @@ public class RyanMainController implements Initializable {
         try (BufferedReader reader = new BufferedReader(new FileReader("tasks.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                taskListView.getItems().add(line.replace("\\n", "\n")); // Replace placeholder with newlines
+                taskListView.getItems().add(line.replace("\\n", "\n"));
             }
             LOGGER.info("Tasks loaded successfully.");
         } catch (IOException e) {
@@ -90,7 +110,7 @@ public class RyanMainController implements Initializable {
 
     @FXML
     private void handleAddTask() {
-        LOGGER.info("Add Task button pressed."); // Debug log
+        LOGGER.info("Add Task button pressed.");
         openTaskDetailWindow(null);
     }
 
@@ -112,7 +132,7 @@ public class RyanMainController implements Initializable {
 
     private void openTaskDetailWindow(String task) {
         try {
-            LOGGER.info("Opening Task Detail Window."); // Debug log
+            LOGGER.info("Opening Task Detail Window.");
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/edu/au/cpsc/module7/TaskDetail.fxml"));
             Parent parent = fxmlLoader.load();
 
@@ -120,13 +140,13 @@ public class RyanMainController implements Initializable {
             if (controller != null) {
                 controller.setTask(task);
                 controller.setMainController(this);
-                LOGGER.info("TaskDetailController initialized."); // Debug log
+                LOGGER.info("TaskDetailController initialized.");
 
                 Stage stage = new Stage();
-                stage.setTitle("Task Details");
+                stage.setTitle("Task Detail Data");
                 stage.setScene(new Scene(parent));
-                stage.setWidth(600);  // Set the initial width
-                stage.setHeight(400); // Set the initial height
+                stage.setWidth(600);
+                stage.setHeight(400);
                 stage.show();
             } else {
                 LOGGER.log(Level.SEVERE, "Failed to get TaskDetailController");
@@ -135,7 +155,6 @@ public class RyanMainController implements Initializable {
             LOGGER.log(Level.SEVERE, "Failed to open task detail window", e);
         }
     }
-
 
     public void addTask(String task) {
         if (task != null && !task.isEmpty()) {

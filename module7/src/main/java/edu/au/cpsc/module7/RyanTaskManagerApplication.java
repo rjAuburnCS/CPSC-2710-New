@@ -15,8 +15,8 @@ public class RyanTaskManagerApplication extends Application {
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource("/edu/au/cpsc/module7/main.css").toExternalForm());
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Task Manager");
-            primaryStage.setWidth(800);  // Set the initial width
+            primaryStage.setTitle("Task Manager Lite");
+            primaryStage.setWidth(800);
             primaryStage.setHeight(600);
             primaryStage.show();
         } catch (Exception e) {

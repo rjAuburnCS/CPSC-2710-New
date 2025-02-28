@@ -36,20 +36,20 @@ public class TaskDetailController {
     public void setTask(String task) {
         this.initialTask = task;
         if (task != null) {
-            // Split the task details string by newline
+
             String[] taskDetails = task.split("\n", 2);
 
             if (taskDetails.length > 0) {
-                taskNameField.setText(taskDetails[0]); // Set the task name
+                taskNameField.setText(taskDetails[0]);
             }
             if (taskDetails.length > 1) {
                 String[] descriptionAndDate = taskDetails[1].split(" - ", 2);
                 if (descriptionAndDate.length > 0) {
-                    taskDescriptionArea.setText(descriptionAndDate[0]); // Set the task description
+                    taskDescriptionArea.setText(descriptionAndDate[0]);
                 }
                 if (descriptionAndDate.length > 1) {
-                    String dueDateStr = descriptionAndDate[1]; // Extract the due date string
-                    dueDatePicker.setValue(LocalDate.parse(dueDateStr)); // Set the due date
+                    String dueDateStr = descriptionAndDate[1];
+                    dueDatePicker.setValue(LocalDate.parse(dueDateStr));
                 }
             }
         }
@@ -67,7 +67,7 @@ public class TaskDetailController {
             return;
         }
 
-        // Format task details with task name on the first line and description/date on the second line
+
         String taskDetails = taskName + "\n" + taskDescription + " - " + dueDate;
 
         if (initialTask != null) {
@@ -76,19 +76,19 @@ public class TaskDetailController {
             mainController.addTask(taskDetails);
         }
 
-        // Close the window
+
         Stage stage = (Stage) saveButton.getScene().getWindow();
         stage.close();
     }
 
     private void showErrorDialog(String message) {
-        // Add your custom error dialog implementation here
+
         System.err.println(message);
     }
 
     @FXML
     private void handleCancel() {
-        // Close the window without saving
+
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
