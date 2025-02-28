@@ -36,18 +36,21 @@ public class TaskDetailController {
     public void setTask(String task) {
         this.initialTask = task;
         if (task != null) {
-            // Split the task details string
-            String[] taskDetails = task.split(" - ");
+            // Split the task details string by newline
+            String[] taskDetails = task.split("\n", 2);
 
             if (taskDetails.length > 0) {
                 taskNameField.setText(taskDetails[0]); // Set the task name
             }
             if (taskDetails.length > 1) {
-                taskDescriptionArea.setText(taskDetails[1]); // Set the task description
-            }
-            if (taskDetails.length > 2 && taskDetails[2].startsWith("Due: ")) {
-                String dueDateStr = taskDetails[2].substring(5); // Extract the due date string
-                dueDatePicker.setValue(LocalDate.parse(dueDateStr)); // Set the due date
+                String[] descriptionAndDate = taskDetails[1].split(" - ", 2);
+                if (descriptionAndDate.length > 0) {
+                    taskDescriptionArea.setText(descriptionAndDate[0]); // Set the task description
+                }
+                if (descriptionAndDate.length > 1) {
+                    String dueDateStr = descriptionAndDate[1]; // Extract the due date string
+                    dueDatePicker.setValue(LocalDate.parse(dueDateStr)); // Set the due date
+                }
             }
         }
     }
@@ -64,7 +67,8 @@ public class TaskDetailController {
             return;
         }
 
-        String taskDetails = taskName + " - " + taskDescription + " - Due: " + dueDate;
+        // Format task details with task name on the first line and description/date on the second line
+        String taskDetails = taskName + "\n" + taskDescription + " - " + dueDate;
 
         if (initialTask != null) {
             mainController.updateTask(initialTask, taskDetails);

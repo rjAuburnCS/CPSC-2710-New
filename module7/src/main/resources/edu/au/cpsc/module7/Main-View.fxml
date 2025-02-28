@@ -10,13 +10,13 @@
 
 <AnchorPane stylesheets="@main.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module7.controller.RyanMainController">
     <children>
-        <MenuBar layoutX="0.0" layoutY="0.0" styleClass="menu-bar" stylesheets="@main.css">
+        <MenuBar styleClass="menu-bar" stylesheets="@main.css" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <menus>
                 <Menu styleClass="menu" text="File">
                     <items>
                         <MenuItem fx:id="newMenuItem" onAction="#handleNew" styleClass="menu-item" text="New" accelerator="Ctrl+N"/>
                         <MenuItem fx:id="saveMenuItem" onAction="#handleSave" styleClass="menu-item" text="Save" accelerator="Ctrl+S"/>
-                        <SeparatorMenuItem styleClass="separator-menu-item" />
+
                         <MenuItem fx:id="exitMenuItem" onAction="#handleExit" styleClass="menu-item" text="Exit" accelerator="Ctrl+Q"/>
                     </items>
                 </Menu>
@@ -30,11 +30,14 @@
             </menus>
         </MenuBar>
 
+        <ListView fx:id="taskListView" prefHeight="200.0" prefWidth="380.0" styleClass="list-view" stylesheets="@main.css"
+                  AnchorPane.topAnchor="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="60.0" />
 
-        <ListView fx:id="taskListView" layoutX="10.0" layoutY="30.0" prefHeight="200.0" prefWidth="380.0" styleClass="list-view" stylesheets="@main.css" />
-
-        <Button fx:id="addTaskButton" layoutX="10.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleAddTask" styleClass="button" stylesheets="@main.css" text="Add Task" />
-        <Button fx:id="editTaskButton" layoutX="80.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleEditTask" styleClass="button" stylesheets="@main.css" text="Edit Task" />
-        <Button fx:id="deleteTaskButton" layoutX="150.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleDeleteTask" styleClass="button" stylesheets="@main.css" text="Delete Task" />
+        <Button fx:id="addTaskButton" mnemonicParsing="false" onAction="#handleAddTask" styleClass="button" stylesheets="@main.css" text="Add"
+                AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+        <Button fx:id="editTaskButton" mnemonicParsing="false" onAction="#handleEditTask" styleClass="button" stylesheets="@main.css" text="Edit"
+                AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="80.0" />
+        <Button fx:id="deleteTaskButton" mnemonicParsing="false" onAction="#handleDeleteTask" styleClass="button" stylesheets="@main.css" text="Delete"
+                AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="150.0" />
     </children>
 </AnchorPane>

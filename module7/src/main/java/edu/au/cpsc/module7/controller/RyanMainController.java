@@ -60,7 +60,7 @@ public class RyanMainController implements Initializable {
     private void handleSave() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("tasks.txt"))) {
             for (String task : taskListView.getItems()) {
-                writer.write(task);
+                writer.write(task.replace("\n", "\\n")); // Replace newlines with a placeholder
                 writer.newLine();
             }
             LOGGER.info("Tasks saved successfully.");
@@ -75,7 +75,7 @@ public class RyanMainController implements Initializable {
         try (BufferedReader reader = new BufferedReader(new FileReader("tasks.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                taskListView.getItems().add(line);
+                taskListView.getItems().add(line.replace("\\n", "\n")); // Replace placeholder with newlines
             }
             LOGGER.info("Tasks loaded successfully.");
         } catch (IOException e) {
@@ -125,6 +125,8 @@ public class RyanMainController implements Initializable {
                 Stage stage = new Stage();
                 stage.setTitle("Task Details");
                 stage.setScene(new Scene(parent));
+                stage.setWidth(600);  // Set the initial width
+                stage.setHeight(400); // Set the initial height
                 stage.show();
             } else {
                 LOGGER.log(Level.SEVERE, "Failed to get TaskDetailController");
@@ -133,6 +135,7 @@ public class RyanMainController implements Initializable {
             LOGGER.log(Level.SEVERE, "Failed to open task detail window", e);
         }
     }
+
 
     public void addTask(String task) {
         if (task != null && !task.isEmpty()) {

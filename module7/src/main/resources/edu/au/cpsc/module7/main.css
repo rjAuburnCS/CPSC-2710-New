@@ -7,52 +7,55 @@
 
 .menu-bar {
     -fx-background-color: orange;
-    -fx-text-fill: #00FF00;
+
 }
 
 .menu {
     -fx-background-color: orange;
-    -fx-text-fill: #00FF00;
+
 }
 
 .menu-item {
     -fx-background-color: orange;
-    -fx-text-fill: #00FF00;
+
 }
 
-.separator-menu-item {
-    -fx-background-color: orange;
-}
 
-/* ListView settings */
+
+
 .list-view {
-    -fx-background-color: #808080; /* Grey background */
-    -fx-control-inner-background: #808080; /* Inner background color */
-    -fx-text-fill: #00FF00; /* Green text */
-    -fx-cell-text-fill: #00FF00; /* Green text for list items */
+    -fx-background-color: #808080;
+    -fx-control-inner-background: #808080;
+    -fx-text-fill: #00FF00;
+    -fx-cell-text-fill: #00FF00;
 }
 
-/* ListCell settings (for individual items) */
+
 .list-view .list-cell {
-    -fx-background-color: #808080; /* Grey background for list items */
-    -fx-text-fill: #00FF00 !important; /* Green text for list items */
+    -fx-background-color: #808080;
+    -fx-text-fill: #00FF00 !important;
 }
 
-/* ListCell focused settings */
+
 .list-view .list-cell:focused {
-    -fx-background-color: #00FF00; /* Green background when focused */
-    -fx-text-fill: #000000 !important; /* Black text when focused */
+    -fx-background-color: #00FF00;
+    -fx-text-fill: #000000 !important;
 }
 
 
-/* Button settings */
+
 .button {
     -fx-background-color: #000000;
     -fx-text-fill: #00FF00;
     -fx-border-color: #00FF00;
 }
 
-/* AnchorPane settings */
+
 .AnchorPane {
     -fx-background-color: #000000;
 }
+
+
+.button:hover {
+    -fx-font-size: 18px;
+    }

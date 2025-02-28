@@ -16,6 +16,8 @@ public class RyanTaskManagerApplication extends Application {
             scene.getStylesheets().add(getClass().getResource("/edu/au/cpsc/module7/main.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.setTitle("Task Manager");
+            primaryStage.setWidth(800);  // Set the initial width
+            primaryStage.setHeight(600);
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -24,7 +26,7 @@ public class RyanTaskManagerApplication extends Application {
     }
 
     private void showErrorDialog(String message) {
-        // Add your custom error dialog implementation here
+
         System.err.println(message);
     }
 
