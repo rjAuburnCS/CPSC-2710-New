@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane stylesheets="@main2.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module7.controller.TaskDetailController">
+<AnchorPane stylesheets="@detail.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module7.controller.TaskDetailController">
     <children>
         <Label layoutY="10.0" styleClass="label" text="Task Name"
                AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" />

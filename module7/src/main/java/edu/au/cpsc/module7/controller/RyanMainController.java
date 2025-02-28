@@ -50,7 +50,8 @@ public class RyanMainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         handleLoad();
 
-        
+        taskListView.getSelectionModel().clearSelection();
+
         taskListView.setCellFactory(lv -> new ListCell<String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
