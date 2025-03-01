@@ -9,7 +9,8 @@ My vision is to create a lightweight, user-friendly task manager that allows use
 ## Basic Functionality
 - Add new tasks with name, description, and due date.
 - Menu with File and Edit, each having a drop down menu.
-- Menu - File options include the function to add, save the changes, and exit the program.
+- Menu - File options include the function to make a new list, save the changes, and exit the program.
+- Menu - Edit options include the function to add tasks, edit tasks, or delete a task.
 - Edit existing tasks.
 - Save tasks to a file.
 - Load tasks from a file.
@@ -54,8 +55,8 @@ My vision is to create a lightweight, user-friendly task manager that allows use
     - Implementing a better system for data persistence, rather than a text file.
 
 ## Screenshots
-![Main Window](screenshots/mainwindow.png)
-![Task Detail Window](screenshots/taskdetailwindow.png)
+![mainwindow](screenshots/mainwindow.png)
+![taskdetailwindow](screenshots/taskdetailwindow.png)
 
 ## Project Structure
 The project follows a straightforward MVC-like pattern with controllers managing the interactions and the user interface defined in FXML files.
