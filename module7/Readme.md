@@ -84,24 +84,6 @@ The project follows a straightforward MVC-like pattern with controllers managing
 - **JavaFX**: JavaFX SDK 11 or higher.
 - **Maven**: To build and manage dependencies.
 
-## Building and Running the Application
-1. **Clone the repository**:
-    ```sh
-    git clone https://github.com/yourusername/task-manager-lite.git
-    cd task-manager-lite
-    ```
 
-2. **Build the project using Maven**:
-    ```sh
-    mvn clean install
-    ```
-
-3. **Run the application**:
-    ```sh
-    mvn javafx:run
-    ```
-
-
-    ```
 
 
