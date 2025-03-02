@@ -57,8 +57,9 @@ My vision is to create a lightweight, user-friendly task manager that allows use
 
 ## Screenshots
 
+![Main Window](mainwindow.png)
+![Task Detail Window](taskdetailwindow.png)
 
-![taskdetailwindow](/CPSC-2710-NEW/Module7/taskdetailwindow.png)
 
 
 
