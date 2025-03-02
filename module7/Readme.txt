@@ -57,8 +57,8 @@ My vision is to create a lightweight, user-friendly task manager that allows use
 
 ## Screenshots
 
-![Main Window](/module7/mainwindow.png)
-![Task Detail Window](./taskdetailwindow.png)
+![mainwindow](mainwindow.png)
+![taskdetailwindow](taskdetailwindow.png)
 
 
 
