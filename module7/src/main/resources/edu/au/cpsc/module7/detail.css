@@ -54,6 +54,14 @@
     -fx-highlight-text-fill: #000000;
 }
 
+.date-picker .calendar-popup {
+    -fx-background-color: grey;
+}
+
+.date-picker .calendar-grid .day-cell:hover {
+    -fx-background-color: #00FF00;
+}
+
 
 .button {
     -fx-background-color: orange;

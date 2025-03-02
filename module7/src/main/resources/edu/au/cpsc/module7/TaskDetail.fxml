@@ -9,18 +9,18 @@
 
 <AnchorPane stylesheets="@detail.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module7.controller.TaskDetailController">
     <children>
-        <Label layoutY="10.0" styleClass="label" text="Task Name"
+        <Label layoutY="10.0" styleClass="label" text="Task Name:"
                AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" />
         <TextField fx:id="taskNameField" prefWidth="200.0" styleClass="text-field"
                    AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="10.0" />
 
-        <Label layoutY="50.0" styleClass="label" text="Description"
+        <Label layoutY="50.0" styleClass="label" text="Description:"
                AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="10.0" />
         <TextArea fx:id="taskDescriptionArea" prefHeight="100.0" prefWidth="200.0" styleClass="text-area"
                   AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="10.0"
                   />
 
-        <Label layoutY="170.0" styleClass="label" text="Due Date"
+        <Label layoutY="170.0" styleClass="label" text="Due Date:"
                AnchorPane.topAnchor="170.0" AnchorPane.leftAnchor="10.0" />
         <DatePicker fx:id="dueDatePicker" styleClass="date-picker"
                     AnchorPane.topAnchor="170.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="10.0" />

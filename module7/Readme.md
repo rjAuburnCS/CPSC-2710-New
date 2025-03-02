@@ -36,7 +36,7 @@ My vision was and is to create a lightweight, user-friendly task manager that al
 4. **Task Detail Data Window**: This secondary window opens automatically when the "Add" button or (Ctrl + A) are selected by the user, allowing them to create a task with:
     - **Task Name**: User text field to input the general name of the task at hand. For example: A trip to the grocery store can be named "Grocery".
     - **Description**: User text area to input the details (enumerated or not) needed to be completed. For example: A trip to the grocery store might need a list like "1. Meat\n2. Cheese\n...".
-    - **Due Date**: User date picker field, user can input their own due date in the field or use the "calendar" icon/button directly to the right of the field to select a formatted due date (more reliable for data persistence).
+    - **Due Date**: User date picker field, user can NOT input their own due date in the field, must use the "calendar" icon/button directly to the right of the field to select a formatted due date (more reliable for data persistence).
     - **Save**: IMPORTANT - Make sure you click "Save." When the user has input data into any of the fields, the save button at the bottom of the "Task Detail Data" window will save the work, add it to the task list, and automatically close the Task Detail Data window.
     - **Cancel**: If the user decides they do not need to add a task, in the Task Detail Data window, click on "Cancel" to close the window and return to the main window with the list of tasks.
 
