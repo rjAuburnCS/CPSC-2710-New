@@ -55,7 +55,7 @@ My vision was and is to create a lightweight, user-friendly task manager that al
 
 - **Under Construction - To be added at a later date**:
     - Export task-list to .csv file.
-    - Fine-tuning CSS styling.
+    - Fine-tuning CSS styling - the pop up calendar in task detail data window is not exactly perfect-looking (background is white when it should be grey or black for high contrast) but functions just fine.
     - Implementing more robust user feedback by adding input validity fields for text input.
     - Implementing a better system for data persistence rather than a text file.
 
