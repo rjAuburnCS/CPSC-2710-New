@@ -54,9 +54,13 @@ My vision is to create a lightweight, user-friendly task manager that allows use
     - Implementing more robust user feedback by adding input validity fields for text input.
     - Implementing a better system for data persistence, rather than a text file.
 
+
 ## Screenshots
-![mainwindow](mainwindow.png)
-![taskdetailwindow](taskdetailwindow.png)
+
+![Main Window](./mainwindow.png)
+![Task Detail Window](./taskdetailwindow.png)
+
+
 
 ## Project Structure
 The project follows a straightforward MVC-like pattern with controllers managing the interactions and the user interface defined in FXML files.
