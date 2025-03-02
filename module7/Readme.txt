@@ -55,8 +55,8 @@ My vision is to create a lightweight, user-friendly task manager that allows use
     - Implementing a better system for data persistence, rather than a text file.
 
 ## Screenshots
-![mainwindow](screenshots/mainwindow.png)
-![taskdetailwindow](screenshots/taskdetailwindow.png)
+![mainwindow](/mainwindow.png)
+![taskdetailwindow](/taskdetailwindow.png)
 
 ## Project Structure
 The project follows a straightforward MVC-like pattern with controllers managing the interactions and the user interface defined in FXML files.
