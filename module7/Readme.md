@@ -1,16 +1,16 @@
 # Task Manager Lite
 
 ## Inspiration
-The inspiration behind Task Manager Lite stems from the need for a simple and efficient task management application that helps users organize their tasks and increase productivity.
+The inspiration behind Task Manager Lite arose from the depths, due to my need for a simple and efficient task management application that helps me/anyone organize simple tasks and (hopefully) increase productivity!
 
 ## Vision
-My vision is to create a lightweight, user-friendly task manager that allows users to easily add, edit, save, and delete tasks while providing a visually appealing interface.
-
+My vision was and is to create a lightweight, user-friendly task manager that allows users to easily create new task lists, add, edit, save, and delete important tasks while providing a visually appealing high contrast interface.
+This is version 1.0.0 of my Task Manager Lite application. I will add to this over time to practice what javafx is able to create!
 ## Basic Functionality
-- Add new tasks with name, description, and due date.
 - Menu with File and Edit, each having a drop down menu.
-- Menu - File options include the function to make a new list, save the changes, and exit the program.
-- Menu - Edit options include the function to add tasks, edit tasks, or delete a task.
+- Menu - "File" options include the function to make a new list, save the changes, and exit the program.
+- Menu - "Edit" options include the function to add tasks, edit tasks, or delete a task.
+- Add new tasks with name, description, and due date - In a separate window "Task Detail Data".
 - Edit existing tasks.
 - Save tasks to a file.
 - Load tasks from a file.
@@ -36,11 +36,14 @@ My vision is to create a lightweight, user-friendly task manager that allows use
 	- **Task Name**: User text field to input the general name of the task at hand, for example: A trip to the grocery store can be named "Grocery"
 	- **Description**: User text area  to input the details (enumerated or not) needed to be completed, for example: A trip to the grocery store you might need to buy a list " 1. Meat\n 2. Cheese\n ..."
 	- **Due Date**: User date pick field, user can input their own due date in the field OR use the "calendar" icon/button directly to the right of the field to select a formatted due date (more reliable for data persistence)
+    - **Save**: IMPORTANT - make sure you click "Save". When the user has input data into one of the fields, data in any of the three input fields will be accpeted, the save button at the bottom of "Task Detail Data" window will save the work, add it to the task list, and auto-closes the Task Detail Data window.
+    - **Cancel**: When the user decides they do not need to add a task, in the Task Detail Data window, click on "cancel" to close the window and have only the main window with the list of tasks open.
 
 4. **Task Management**:
     - **Save Tasks**: Click the "Save" menu item under "File" or use the keyboard shortcut (Ctrl+S) to save the added tasks to a file.
     - **Load Tasks**: Tasks are automatically loaded when the application starts.
-    - **Add Task**: Click the "Add" button or use the "Add Task" menu item (Ctrl+A) to open the task detail window and enter task details.
+    - **Add Task**: Click the "Add" button or use the "Add Task" menu item (Ctrl + A) to open the task detail window and enter task details.
+5. **IMPORTANT**: Do not forget - when you click "Add" (Ctrl +A) and add a new task, or when you click to "edit" (Ctrl + E) a task, you must go to "File" then select "Save" (Ctrl + S) in order for the task list to be updated and remain in the list the next time you launch the app!
 
 
 ## Functionality Implemented vs. Under Construction
@@ -48,7 +51,7 @@ My vision is to create a lightweight, user-friendly task manager that allows use
     - Task addition, editing, saving, and deletion.
     - Custom CSS styling.
     - Basic data persistence via text file.
-- **Under Construction**: 
+- **Under Construction-To be added at later date**: 
     - Export task-list to .csv file.
     - Fine tuning CSS styling.
     - Implementing more robust user feedback by adding input validity fields for text input.
