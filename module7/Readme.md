@@ -25,7 +25,7 @@ My vision was and is to create a lightweight, user-friendly task manager that al
 
 2. **Edit Menu**:
     - **Add Task (Ctrl+A)**: Click "Edit" and select "Add Task" to open the task detail window and enter task details.
-    - **Edit Task (Ctrl+E)**: Click "Edit" Select a task from the list, then click "Edit Task" to modify the selected task.
+    - **Edit Task (Ctrl+E)**: Click "Edit" and select a task from the list, then click "Edit Task" to modify the selected task.
     - **Delete Task (Ctrl+D)**: Click "Edit" Select a task from the list, then click "Delete Task" to remove the selected task.
 
 3. **Main Window**:
@@ -44,7 +44,7 @@ My vision was and is to create a lightweight, user-friendly task manager that al
     - **Save Tasks**: Click the "Save" menu item under "File" or use the keyboard shortcut (Ctrl+S) to save the added tasks to a file.
     - **Load Tasks**: Tasks are automatically loaded when the application starts.
     - **Add Task**: Click the "Add" button or use the "Add Task" menu item (Ctrl + A) to open the task detail window and enter task details.
-    - **IMPORTANT**: When you click "Add" (Ctrl + A) to add a new task, or when you click to "Edit" (Ctrl + E) a task, you must go to "File" and select "Save" (Ctrl + S) to update the task list and ensure it remains in the list the next time you launch the app.
+    - **IMPORTANT**: When you click "Add" (Ctrl + A) to add a new task, or when you click to "Edit" (Ctrl + E) a task, you must go to "File" and select "Save" or use the shortcut (Ctrl + S) to update the task list. This will ensure an added/edited task remains in the list the next time you launch the app!!
 
 ## Functionality Implemented vs. Under Construction
 
