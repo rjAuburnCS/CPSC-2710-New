@@ -46,11 +46,12 @@
     }
 
 
-
 .date-picker-popup > .month-year-pane {
     -fx-base: #1d1d1d ;
     -fx-mark-highlight-color: -fx-light-text-color ;
 }
+
+
 
 .date-picker {
     -fx-background-color: #000000;
@@ -60,8 +61,9 @@
     -fx-highlight-text-fill: #000000;
 }
 
+
 .date-picker .calendar-grid  {
-    -fx-background-color: #00FF00;
+    -fx-background-color: orange;
 }
 
 .date-picker .calendar-grid .day-cell:hover {
