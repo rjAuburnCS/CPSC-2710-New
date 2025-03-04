@@ -36,7 +36,7 @@ My vision was and is to create a lightweight, user-friendly task manager that al
 4. **Task Detail Data Window**: This secondary window opens automatically when the "Add" button or (Ctrl + A) are selected by the user, allowing them to create a task with:
     - **Task Name**: User text field to input the general name of the task at hand. For example: A trip to the grocery store can be named "Grocery".
     - **Description**: User text area to input the details (enumerated or not) needed to be completed. For example: A trip to the grocery store might need a list like "1. Meat\n2. Cheese\n...".
-    - **Due Date**: User date picker field, user can NOT input their own due date in the field, must use the "calendar" icon/button directly to the right of the field to select a formatted due date (more reliable for data persistence).
+    - **Due Date**: User date selection field, user can input their own due date in the field, or use the "calendar" icon/button directly to the right of the field to select a formatted due date (more reliable for data persistence). If a date is input manually, use the format "mm-dd-year". If input is wrong format then when saved the main view task list will show a "-" without a date, input validity is under construction!
     - **Save**: IMPORTANT - Make sure you click "Save." When the user has input data into any of the fields, the save button at the bottom of the "Task Detail Data" window will save the work, add it to the task list, and automatically close the Task Detail Data window.
     - **Cancel**: If the user decides they do not need to add a task, in the Task Detail Data window, click on "Cancel" to close the window and return to the main window with the list of tasks.
 
@@ -55,6 +55,7 @@ My vision was and is to create a lightweight, user-friendly task manager that al
 
 - **Under Construction - To be added at a later date**:
     - Export task-list to .csv file.
+    - In the main window task list, the due dates are show year first, this formatting is not exactly wrong but it does not look pleasing, fix is under construction.
     - Fine-tuning CSS styling - the pop up calendar in task detail data window is not exactly perfect-looking (background is white when it should be grey or black for high contrast) but functions just fine.
     - Implementing more robust user feedback by adding input validity fields for task detail data input.
     - Implementing a better system for data persistence rather than a text file.
