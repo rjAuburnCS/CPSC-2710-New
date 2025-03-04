@@ -62,7 +62,7 @@ My vision was and is to create a lightweight, user-friendly task manager that al
 
 ## Screenshots
 
-![Main Window](mainwindow.png)
+![Main Window](mainwindow1.png)
 ![Task Detail Window](taskdetailwindow.png)
 ![Task Detail Window](calendarview.png)
 
