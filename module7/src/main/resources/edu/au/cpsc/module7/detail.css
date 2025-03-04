@@ -1,7 +1,7 @@
 
 .root {
     -fx-background-color: #000000;
-    -fx-text-fill: #00FF00;
+
     -fx-font-size: 13px;
     -fx-font-family: "Arial Black";
 }
@@ -46,16 +46,22 @@
     }
 
 
+
+.date-picker-popup > .month-year-pane {
+    -fx-base: #1d1d1d ;
+    -fx-mark-highlight-color: -fx-light-text-color ;
+}
+
 .date-picker {
     -fx-background-color: #000000;
-    -fx-text-fill: #00FF00;
+    -fx-text-fill: black;
     -fx-border-color: #00FF00;
     -fx-highlight-fill: #00FF00;
     -fx-highlight-text-fill: #000000;
 }
 
-.date-picker .calendar-popup {
-    -fx-background-color: grey;
+.date-picker .calendar-grid  {
+    -fx-background-color: #00FF00;
 }
 
 .date-picker .calendar-grid .day-cell:hover {
