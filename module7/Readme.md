@@ -64,6 +64,7 @@ My vision was and is to create a lightweight, user-friendly task manager that al
 
 ![Main Window](mainwindow.png)
 ![Task Detail Window](taskdetailwindow.png)
+![Task Detail Window](calendarview.png)
 
 ## Project Structure
 The project follows a straightforward MVC-like pattern with controllers managing the interactions and the user interface defined in FXML files.
