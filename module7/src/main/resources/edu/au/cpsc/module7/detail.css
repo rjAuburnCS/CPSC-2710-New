@@ -66,6 +66,8 @@
     -fx-background-color: orange;
 }
 
+
+
 .date-picker .calendar-grid .day-cell:hover {
     -fx-background-color: #00FF00;
 }
